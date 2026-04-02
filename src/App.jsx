@@ -42,7 +42,7 @@ const networks = [
 ];
 
 const impactStats = [
-  { s: "1813", l: "Year the gourde was born", d: "One of the oldest currencies now on blockchain" },
+  { s: "1813", l: "Year the gourde was born", d: "One of the world's oldest currencies now on blockchain" },
   { s: "$4.1B", l: "Remittances to Haiti", d: "HTGC cuts fees from 8% to under 2%" },
   { s: "80%", l: "Adults unbanked", d: "HTGC works on any phone with a SIM" },
   { s: "~131", l: "HTG per USD", d: "HTGC creates structural gourde demand" },
@@ -58,7 +58,7 @@ const regulations = [
 ];
 
 const tickerItems = [
-  { l: "EST. 1813 — OLDEST CURRENCY ON CHAIN", c: C.accent },
+  { l: "EST. 1813 — ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN", c: C.accent },
   { l: "1:1 GOURDE PEG", c: C.teal },
   { l: "100% TREASURY BACKED", c: C.accent },
   { l: "BRH PARTNERSHIP", c: C.teal },
@@ -148,7 +148,7 @@ export default function App() {
                   <div style={{ width: 6, height: 6, borderRadius: "50%", background: C.teal, animation: "pulse2 2s infinite" }} />
                 </div>
                 <span style={{ fontSize: 12, color: C.teal, fontWeight: 600, fontFamily: F1, letterSpacing: 1.5 }}>
-                  EST. 1813 · ONE OF THE OLDEST CURRENCIES ON CHAIN
+                  EST. 1813 · ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN
                 </span>
               </div>
             </Reveal>
@@ -172,7 +172,7 @@ export default function App() {
 
             <Reveal delay={0.2}>
               <p style={{ fontSize: 18, color: C.gray, lineHeight: 1.75, maxWidth: 480, margin: "0 0 36px", fontFamily: F2 }}>
-                The Haitian gourde has been sovereign currency since 1813 — making HTGC one of the oldest national currencies
+                The Haitian gourde has been sovereign currency since 1813 — making HTGC one of the world's oldest national currencies
                 ever tokenized. Pegged 1:1, backed by Haiti's treasury. Issued by{" "}
                 <strong style={{ color: C.white }}>insfers.com</strong>.
               </p>
@@ -670,7 +670,7 @@ export default function App() {
                 lineHeight: 1.1,
               }}
             >
-              The oldest currency<br />on the newest rails.
+              One of the world's oldest currencies.<br />On the newest rails.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
