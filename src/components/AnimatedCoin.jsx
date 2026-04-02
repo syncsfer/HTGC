@@ -24,7 +24,7 @@ export default function AnimatedCoin() {
             width: 210,
             height: 210,
             borderRadius: "50%",
-            background: `radial-gradient(circle at 35% 35%, #1A1A2E, ${C.bg})`,
+            background: `radial-gradient(circle at 35% 35%, #E8E8F0, ${C.bg})`,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

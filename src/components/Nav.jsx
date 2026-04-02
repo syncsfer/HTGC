@@ -19,7 +19,7 @@ export default function Nav() {
         right: 0,
         zIndex: 1000,
         padding: "0 32px",
-        background: scrolled ? "rgba(4,8,15,0.92)" : "transparent",
+        background: scrolled ? "rgba(255,255,255,0.95)" : "transparent",
         backdropFilter: scrolled ? "blur(24px)" : "none",
         borderBottom: scrolled ? `1px solid ${C.border}` : "none",
         transition: "all 0.4s",
@@ -64,9 +64,9 @@ export default function Nav() {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: 13.5, fontWeight: 500, fontFamily: F2, transition: "color 0.2s" }}
+              style={{ color: "rgba(0,0,0,0.5)", textDecoration: "none", fontSize: 13.5, fontWeight: 500, fontFamily: F2, transition: "color 0.2s" }}
               onMouseEnter={(e) => (e.target.style.color = C.white)}
-              onMouseLeave={(e) => (e.target.style.color = "rgba(255,255,255,0.5)")}
+              onMouseLeave={(e) => (e.target.style.color = "rgba(0,0,0,0.5)")}
             >
               {item}
             </a>

@@ -10,7 +10,7 @@ export default function Calculator() {
   return (
     <div
       style={{
-        background: "rgba(255,255,255,0.04)",
+        background: "rgba(0,0,0,0.04)",
         borderRadius: 24,
         border: `1px solid ${C.border}`,
         padding: "36px 32px",
@@ -50,8 +50,8 @@ export default function Calculator() {
               fontSize: 20,
               fontWeight: 700,
               fontFamily: F1,
-              background: "rgba(255,255,255,0.06)",
-              border: `1px solid rgba(255,255,255,0.1)`,
+              background: "rgba(0,0,0,0.06)",
+              border: `1px solid rgba(0,0,0,0.1)`,
               borderRadius: 12,
               color: C.white,
               outline: "none",

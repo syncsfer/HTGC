@@ -103,7 +103,7 @@ export default function App() {
             position: "absolute",
             inset: 0,
             opacity: 0.3,
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.015) 1px, transparent 1px)`,
             backgroundSize: "80px 80px",
           }}
         />
@@ -199,7 +199,7 @@ export default function App() {
                 <a
                   href="#how"
                   style={{
-                    background: "rgba(255,255,255,0.05)",
+                    background: "rgba(0,0,0,0.05)",
                     color: C.white,
                     padding: "15px 28px",
                     borderRadius: 14,
@@ -207,7 +207,7 @@ export default function App() {
                     fontWeight: 600,
                     textDecoration: "none",
                     fontFamily: F2,
-                    border: `1px solid rgba(255,255,255,0.08)`,
+                    border: `1px solid rgba(0,0,0,0.08)`,
                   }}
                 >
                   How It Works
@@ -557,7 +557,7 @@ export default function App() {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.012) 1px, transparent 1px)`,
             backgroundSize: "80px 80px",
           }}
         />
@@ -582,14 +582,14 @@ export default function App() {
               <Reveal key={i} delay={i * 0.08}>
                 <div
                   style={{
-                    background: "rgba(255,255,255,0.04)",
+                    background: "rgba(0,0,0,0.04)",
                     borderRadius: 16,
                     padding: 28,
-                    border: `1px solid rgba(255,255,255,0.06)`,
+                    border: `1px solid rgba(0,0,0,0.06)`,
                     transition: "background 0.3s",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.04)")}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(0,0,0,0.07)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(0,0,0,0.04)")}
                 >
                   <div style={{ fontSize: 28, fontWeight: 800, fontFamily: F1, color: C.accent }}>{s.s}</div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: C.white, margin: "6px 0 4px", fontFamily: F1 }}>{s.l}</div>
@@ -700,7 +700,7 @@ export default function App() {
               <a
                 href="#"
                 style={{
-                  background: "rgba(255,255,255,0.05)",
+                  background: "rgba(0,0,0,0.05)",
                   color: C.white,
                   padding: "16px 32px",
                   borderRadius: 14,
@@ -746,7 +746,7 @@ export default function App() {
               <p
                 style={{
                   fontSize: 13,
-                  color: "rgba(255,255,255,0.35)",
+                  color: "rgba(0,0,0,0.35)",
                   lineHeight: 1.7,
                   maxWidth: 300,
                   fontFamily: F2,
@@ -783,14 +783,14 @@ export default function App() {
                     style={{
                       display: "block",
                       fontSize: 13.5,
-                      color: "rgba(255,255,255,0.4)",
+                      color: "rgba(0,0,0,0.4)",
                       textDecoration: "none",
                       marginBottom: 9,
                       fontFamily: F2,
                       transition: "color 0.2s",
                     }}
                     onMouseEnter={(e) => (e.target.style.color = C.white)}
-                    onMouseLeave={(e) => (e.target.style.color = "rgba(255,255,255,0.4)")}
+                    onMouseLeave={(e) => (e.target.style.color = "rgba(0,0,0,0.4)")}
                   >
                     {link}
                   </a>
@@ -807,10 +807,10 @@ export default function App() {
               alignItems: "center",
             }}
           >
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: F2 }}>
+            <span style={{ fontSize: 12, color: "rgba(0,0,0,0.2)", fontFamily: F2 }}>
               &copy; 2026 Insfers. All rights reserved.
             </span>
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: F2 }}>Solana &middot; Stellar</span>
+            <span style={{ fontSize: 12, color: "rgba(0,0,0,0.2)", fontFamily: F2 }}>Solana &middot; Stellar</span>
           </div>
         </div>
       </footer>

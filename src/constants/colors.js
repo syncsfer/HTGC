@@ -1,17 +1,17 @@
 export const C = {
-  bg: "#000000",
-  navy: "#0A0A0A",
-  deep: "#111111",
+  bg: "#FFFFFF",
+  navy: "#F7F7F7",
+  deep: "#F0F0F0",
   accent: "#D12229",
   gold: "#E63946",
   teal: "#00209F",
-  white: "#FFFFFF",
+  white: "#0A0A0A",
   off: "#F5F5F5",
-  gray: "#8C8C8C",
+  gray: "#666666",
   text: "#0A0A0A",
   sub: "#555555",
-  card: "rgba(255,255,255,0.04)",
-  border: "rgba(255,255,255,0.08)",
+  card: "rgba(0,0,0,0.02)",
+  border: "rgba(0,0,0,0.08)",
 };
 
 export const F1 = `'Sora', sans-serif`;
