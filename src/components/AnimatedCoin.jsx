@@ -32,7 +32,17 @@ export default function AnimatedCoin() {
           }}
         >
           <span style={{ fontSize: 14, fontFamily: F1, fontWeight: 600, color: C.gray, letterSpacing: 4, marginBottom: 2 }}>HAITIAN</span>
-          <span style={{ fontSize: 52, fontFamily: F1, fontWeight: 800, color: C.accent, letterSpacing: -2 }}>G</span>
+          <svg width="60" height="64" viewBox="0 0 60 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* G shape */}
+            <path
+              d="M52 16C47 8 39 3 30 3C15.6 3 4 14.6 4 29C4 43.4 15.6 55 30 55C40.4 55 49.4 49 53.6 40H32V32H58V29C58 23.6 55.8 18.6 52 16Z"
+              fill={C.accent}
+            />
+            {/* First horizontal bar through the stem */}
+            <rect x="24" y="21" width="20" height="5" rx="2.5" fill={C.bg} />
+            {/* Second horizontal bar through the stem */}
+            <rect x="24" y="32" width="20" height="5" rx="2.5" fill={C.bg} />
+          </svg>
           <span style={{ fontSize: 11, fontFamily: F1, fontWeight: 600, color: C.gray, letterSpacing: 3, marginTop: 2 }}>GOURDE COIN</span>
         </div>
       </div>
