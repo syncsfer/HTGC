@@ -16,7 +16,7 @@ export default function AnimatedCoin() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: `0 0 80px rgba(201,162,39,0.3), 0 0 160px rgba(201,162,39,0.1)`,
+          boxShadow: `0 0 80px rgba(209,34,41,0.3), 0 0 160px rgba(209,34,41,0.1)`,
         }}
       >
         <div
@@ -24,7 +24,7 @@ export default function AnimatedCoin() {
             width: 210,
             height: 210,
             borderRadius: "50%",
-            background: `radial-gradient(circle at 35% 35%, #1A2B48, ${C.bg})`,
+            background: `radial-gradient(circle at 35% 35%, #1A1A2E, ${C.bg})`,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -45,7 +45,7 @@ export default function AnimatedCoin() {
             width: s,
             height: s,
             borderRadius: "50%",
-            border: `1px solid rgba(201,162,39,${0.08 - i * 0.03})`,
+            border: `1px solid rgba(209,34,41,${0.08 - i * 0.03})`,
             top: (320 - s) / 2,
             left: (320 - s) / 2,
             animation: `orbitPulse ${3 + i}s ease-in-out infinite alternate`,

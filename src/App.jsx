@@ -14,7 +14,7 @@ const steps = [
 const reserveBars = [
   { pct: 65, label: "Bons BRH (91-day)", yield: "~17%", color: C.accent },
   { pct: 20, label: "Treasury Bonds", yield: "~16-19%", color: C.teal },
-  { pct: 10, label: "BRH Deposits", yield: "~16%", color: "#7C8CF8" },
+  { pct: 10, label: "BRH Deposits", yield: "~16%", color: "#00209F" },
   { pct: 5, label: "Operating Cash", yield: "~4%", color: C.gray },
 ];
 
@@ -24,8 +24,8 @@ const networks = [
     sub: "SPL Token-2022",
     speed: "400ms",
     cost: "$0.00025",
-    color: "#9945FF",
-    grad: "linear-gradient(135deg, #9945FF, #14F195)",
+    color: "#D12229",
+    grad: "linear-gradient(135deg, #D12229, #E63946)",
     desc: "High throughput for DeFi, DEX trading, and developer integrations. Compliance-ready with freeze authority and transfer hooks.",
     features: ["Jupiter & Raydium DEX listing", "Token-2022 compliance hooks", "Fee sponsorship via relayer"],
   },
@@ -34,8 +34,8 @@ const networks = [
     sub: "Stellar Asset + SEP",
     speed: "3-5s",
     cost: "$0.00001",
-    color: "#3E5EB8",
-    grad: "linear-gradient(135deg, #1A1F3A, #5A8FE8)",
+    color: "#00209F",
+    grad: "linear-gradient(135deg, #001166, #00209F)",
     desc: "Purpose-built for remittances. SEP-24/31 standards for regulated cross-border corridors.",
     features: ["SEP-24/31 remittance rails", "Native SDEX trading", "USDC bridge via Stellar"],
   },
@@ -95,7 +95,7 @@ export default function App() {
           style={{
             position: "absolute",
             inset: 0,
-            background: `radial-gradient(ellipse 80% 60% at 20% 40%, rgba(201,162,39,0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 60%, rgba(0,212,170,0.04) 0%, transparent 60%)`,
+            background: `radial-gradient(ellipse 80% 60% at 20% 40%, rgba(209,34,41,0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 60%, rgba(0,32,159,0.04) 0%, transparent 60%)`,
           }}
         />
         <div
@@ -127,8 +127,8 @@ export default function App() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 8,
-                  background: "rgba(0,212,170,0.08)",
-                  border: "1px solid rgba(0,212,170,0.15)",
+                  background: "rgba(0,32,159,0.08)",
+                  border: "1px solid rgba(0,32,159,0.15)",
                   borderRadius: 100,
                   padding: "5px 14px 5px 8px",
                   marginBottom: 28,
@@ -139,7 +139,7 @@ export default function App() {
                     width: 18,
                     height: 18,
                     borderRadius: "50%",
-                    background: "rgba(0,212,170,0.2)",
+                    background: "rgba(0,32,159,0.2)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -191,7 +191,7 @@ export default function App() {
                     fontWeight: 700,
                     textDecoration: "none",
                     fontFamily: F1,
-                    boxShadow: "0 8px 32px rgba(201,162,39,0.25)",
+                    boxShadow: "0 8px 32px rgba(209,34,41,0.25)",
                   }}
                 >
                   Join Waitlist
@@ -253,7 +253,7 @@ export default function App() {
           style={{
             position: "absolute",
             inset: 0,
-            background: `radial-gradient(ellipse 50% 40% at 70% 50%, rgba(0,212,170,0.04), transparent)`,
+            background: `radial-gradient(ellipse 50% 40% at 70% 50%, rgba(0,32,159,0.04), transparent)`,
           }}
         />
         <div
@@ -338,7 +338,7 @@ export default function App() {
                     textAlign: "center",
                     transition: "border-color 0.3s",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(201,162,39,0.2)")}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(209,34,41,0.2)")}
                   onMouseLeave={(e) => (e.currentTarget.style.borderColor = C.border)}
                 >
                   <div style={{ fontSize: 32, marginBottom: 16, color: C.accent, opacity: 0.6 }}>{s.icon}</div>
@@ -547,7 +547,7 @@ export default function App() {
       {/* ══════ IMPACT GRID ══════ */}
       <section
         style={{
-          background: `linear-gradient(165deg, ${C.navy}, #0B2F5A)`,
+          background: `linear-gradient(165deg, ${C.navy}, #0A0A1A)`,
           padding: "120px 32px",
           position: "relative",
           overflow: "hidden",
@@ -654,7 +654,7 @@ export default function App() {
           style={{
             position: "absolute",
             inset: 0,
-            background: `radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,162,39,0.08), transparent)`,
+            background: `radial-gradient(ellipse 60% 50% at 50% 50%, rgba(209,34,41,0.08), transparent)`,
           }}
         />
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
@@ -692,7 +692,7 @@ export default function App() {
                   fontWeight: 700,
                   textDecoration: "none",
                   fontFamily: F1,
-                  boxShadow: "0 8px 40px rgba(201,162,39,0.3)",
+                  boxShadow: "0 8px 40px rgba(209,34,41,0.3)",
                 }}
               >
                 Join Waitlist

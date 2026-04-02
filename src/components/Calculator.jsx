@@ -63,11 +63,11 @@ export default function Calculator() {
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 20 }}>
         <div style={{ background: "rgba(255,80,80,0.08)", borderRadius: 12, padding: 16, textAlign: "center" }}>
-          <div style={{ fontSize: 11, color: "#FF6B6B", fontFamily: F1, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>TRADITIONAL</div>
-          <div style={{ fontSize: 22, fontWeight: 800, color: "#FF6B6B", fontFamily: F1 }}>${tradCost.toFixed(2)}</div>
+          <div style={{ fontSize: 11, color: "#D12229", fontFamily: F1, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>TRADITIONAL</div>
+          <div style={{ fontSize: 22, fontWeight: 800, color: "#D12229", fontFamily: F1 }}>${tradCost.toFixed(2)}</div>
           <div style={{ fontSize: 11, color: C.gray, fontFamily: F2 }}>in fees (6.5%)</div>
         </div>
-        <div style={{ background: "rgba(0,212,170,0.08)", borderRadius: 12, padding: 16, textAlign: "center" }}>
+        <div style={{ background: "rgba(0,32,159,0.08)", borderRadius: 12, padding: 16, textAlign: "center" }}>
           <div style={{ fontSize: 11, color: C.teal, fontFamily: F1, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>WITH HTGC</div>
           <div style={{ fontSize: 22, fontWeight: 800, color: C.teal, fontFamily: F1 }}>${htgcCost.toFixed(2)}</div>
           <div style={{ fontSize: 11, color: C.gray, fontFamily: F2 }}>in fees (1.8%)</div>
@@ -76,11 +76,11 @@ export default function Calculator() {
 
       <div
         style={{
-          background: `linear-gradient(135deg, rgba(201,162,39,0.12), rgba(0,212,170,0.08))`,
+          background: `linear-gradient(135deg, rgba(209,34,41,0.12), rgba(0,32,159,0.08))`,
           borderRadius: 14,
           padding: 20,
           textAlign: "center",
-          border: `1px solid rgba(201,162,39,0.15)`,
+          border: `1px solid rgba(209,34,41,0.15)`,
         }}
       >
         <div style={{ fontSize: 12, color: C.accent, fontFamily: F1, fontWeight: 600, letterSpacing: 1.5, marginBottom: 4 }}>YOUR FAMILY KEEPS</div>
