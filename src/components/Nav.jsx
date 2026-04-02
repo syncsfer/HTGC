@@ -55,7 +55,7 @@ export default function Nav() {
             G
           </div>
           <span style={{ fontSize: 19, fontWeight: 800, color: C.white, fontFamily: F1, letterSpacing: -0.5 }}>HTGC</span>
-          <span style={{ fontSize: 11, color: C.gray, fontWeight: 500, fontFamily: F2, opacity: 0.7 }}>by insfers.com</span>
+          <span style={{ fontSize: 11, color: C.gray, fontWeight: 500, fontFamily: F2, opacity: 0.7 }}>by Insfers</span>
         </div>
 
         {/* Links */}

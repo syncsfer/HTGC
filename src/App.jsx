@@ -6,7 +6,7 @@ import Calculator from "./components/Calculator";
 
 const steps = [
   { n: "01", t: "Deposit", d: "Send gourde to the partner bank or convert USD through the Insfers app.", icon: "↓" },
-  { n: "02", t: "Mint", d: "Insfers.com mints HTGC 1:1 on Solana or Stellar. Gourde goes into bons BRH.", icon: "◆" },
+  { n: "02", t: "Mint", d: "Insfers mints HTGC 1:1 on Solana or Stellar. Gourde goes into bons BRH.", icon: "◆" },
   { n: "03", t: "Transfer", d: "Send HTGC anywhere in the world instantly. Fractions of a cent per transaction.", icon: "→" },
   { n: "04", t: "Redeem", d: "Burn HTGC, get gourde back. Bank, MonCash, Natcash, or cash. Always 1:1.", icon: "↑" },
 ];
@@ -174,7 +174,7 @@ export default function App() {
               <p style={{ fontSize: 18, color: C.gray, lineHeight: 1.75, maxWidth: 480, margin: "0 0 36px", fontFamily: F2 }}>
                 The Haitian gourde has been sovereign currency since 1813 — making HTGC one of the world's oldest national currencies
                 ever tokenized. Pegged 1:1, backed by Haiti's treasury. Issued by{" "}
-                <strong style={{ color: C.white }}>insfers.com</strong>.
+                <strong style={{ color: C.white }}>Insfers</strong>.
               </p>
             </Reveal>
 
@@ -753,7 +753,7 @@ export default function App() {
                   margin: 0,
                 }}
               >
-                Issued by Insfers.com. A regulated payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's
+                Issued by Insfers. A regulated payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's
                 treasury bills and bonds. Not legal tender.
               </p>
             </div>
@@ -808,7 +808,7 @@ export default function App() {
             }}
           >
             <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: F2 }}>
-              &copy; 2026 Insfers.com. All rights reserved.
+              &copy; 2026 Insfers. All rights reserved.
             </span>
             <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: F2 }}>Solana &middot; Stellar</span>
           </div>
