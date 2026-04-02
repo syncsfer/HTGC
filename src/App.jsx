@@ -42,9 +42,9 @@ const networks = [
 ];
 
 const impactStats = [
+  { s: "1813", l: "Year the gourde was born", d: "One of the oldest currencies now on blockchain" },
   { s: "$4.1B", l: "Remittances to Haiti", d: "HTGC cuts fees from 8% to under 2%" },
   { s: "80%", l: "Adults unbanked", d: "HTGC works on any phone with a SIM" },
-  { s: "0.1%", l: "Bond market / GDP", d: "HTGC reserves deepen sovereign debt" },
   { s: "~131", l: "HTG per USD", d: "HTGC creates structural gourde demand" },
   { s: "2M+", l: "Diaspora worldwide", d: "First way to hold digital gourde abroad" },
   { s: "24/7", l: "Global access", d: "No bank hours. No intermediaries." },
@@ -58,14 +58,15 @@ const regulations = [
 ];
 
 const tickerItems = [
-  { l: "1:1 GOURDE PEG", c: C.accent },
-  { l: "100% TREASURY BACKED", c: C.teal },
-  { l: "BRH PARTNERSHIP", c: C.accent },
-  { l: "17% RESERVE YIELD", c: C.teal },
-  { l: "$4.1B REMITTANCE MARKET", c: C.accent },
-  { l: "SOLANA & STELLAR", c: C.teal },
-  { l: "GENIUS ACT COMPLIANT", c: C.accent },
-  { l: "MiCA AUTHORIZED", c: C.teal },
+  { l: "EST. 1813 — OLDEST CURRENCY ON CHAIN", c: C.accent },
+  { l: "1:1 GOURDE PEG", c: C.teal },
+  { l: "100% TREASURY BACKED", c: C.accent },
+  { l: "BRH PARTNERSHIP", c: C.teal },
+  { l: "17% RESERVE YIELD", c: C.accent },
+  { l: "$4.1B REMITTANCE MARKET", c: C.teal },
+  { l: "SOLANA & STELLAR", c: C.accent },
+  { l: "GENIUS ACT COMPLIANT", c: C.teal },
+  { l: "MiCA AUTHORIZED", c: C.accent },
 ];
 
 export default function App() {
@@ -147,7 +148,7 @@ export default function App() {
                   <div style={{ width: 6, height: 6, borderRadius: "50%", background: C.teal, animation: "pulse2 2s infinite" }} />
                 </div>
                 <span style={{ fontSize: 12, color: C.teal, fontWeight: 600, fontFamily: F1, letterSpacing: 1.5 }}>
-                  LIVE ON SOLANA & STELLAR
+                  EST. 1813 · ONE OF THE OLDEST CURRENCIES ON CHAIN
                 </span>
               </div>
             </Reveal>
@@ -164,14 +165,15 @@ export default function App() {
                   letterSpacing: -2.5,
                 }}
               >
-                Send money<br />to Haiti for<br />
-                <span style={{ color: C.accent }}>pennies, not dollars.</span>
+                212 years of history.<br />Now on blockchain.<br />
+                <span style={{ color: C.accent }}>The Haitian gourde, digital.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
               <p style={{ fontSize: 18, color: C.gray, lineHeight: 1.75, maxWidth: 480, margin: "0 0 36px", fontFamily: F2 }}>
-                HTGC is the Haitian gourde on blockchain. Pegged 1:1, backed by Haiti's treasury bills and bonds. Issued by{" "}
+                The Haitian gourde has been sovereign currency since 1813 — making HTGC one of the oldest national currencies
+                ever tokenized. Pegged 1:1, backed by Haiti's treasury. Issued by{" "}
                 <strong style={{ color: C.white }}>insfers.com</strong>.
               </p>
             </Reveal>
@@ -668,12 +670,13 @@ export default function App() {
                 lineHeight: 1.1,
               }}
             >
-              The gourde deserves<br />a global stage.
+              The oldest currency<br />on the newest rails.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p style={{ fontSize: 18, color: C.gray, fontFamily: F2, margin: "0 0 40px", lineHeight: 1.7 }}>
-              Join the waitlist. Be first to send, hold, and build with the digital gourde.
+              The Haitian gourde has survived 212 years of history. Now it goes global.
+              Be first to send, hold, and build with the digital gourde.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
