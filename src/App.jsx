@@ -3,6 +3,17 @@ import Nav from "./components/Nav";
 import Reveal from "./components/Reveal";
 import AnimatedCoin from "./components/AnimatedCoin";
 import Calculator from "./components/Calculator";
+import tokenImg from "./assets/htgc-token.png";
+
+// ── shared section helpers ──────────────────────────────
+const DARK = "#0A0A10";
+const DARK2 = "#111118";
+
+const Label = ({ children, color = C.accent }) => (
+  <div style={{ fontSize: 11, fontWeight: 700, color, letterSpacing: 3, fontFamily: F1, marginBottom: 14, textTransform: "uppercase" }}>
+    {children}
+  </div>
+);
 
 const steps = [
   { n: "01", t: "Deposit", d: "Send gourde to the partner bank or convert USD through the Insfers app.", icon: "↓" },
@@ -80,167 +91,78 @@ export default function App() {
       <Nav />
 
       {/* ══════ HERO ══════ */}
-      <section
-        style={{
-          background: C.bg,
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          position: "relative",
-          overflow: "hidden",
-          padding: "100px 32px 60px",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: `radial-gradient(ellipse 80% 60% at 20% 40%, rgba(209,34,41,0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 60%, rgba(0,32,159,0.04) 0%, transparent 60%)`,
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            opacity: 0.3,
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.015) 1px, transparent 1px)`,
-            backgroundSize: "80px 80px",
-          }}
-        />
-        <div
-          style={{
-            maxWidth: 1200,
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 400px",
-            gap: 64,
-            alignItems: "center",
-            position: "relative",
-            zIndex: 2,
-            width: "100%",
-          }}
-        >
+      <section style={{ background: "#fff", minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", padding: "110px 48px 80px" }}>
+        {/* Subtle red/blue radial washes */}
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 60% at 15% 50%, rgba(209,34,41,0.05) 0%, transparent 65%), radial-gradient(ellipse 55% 55% at 85% 50%, rgba(0,32,159,0.05) 0%, transparent 65%)" }} />
+        {/* Fine grid */}
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(0,0,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.03) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
+
+        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 480px", gap: 72, alignItems: "center", position: "relative", zIndex: 2, width: "100%" }}>
           <div>
+            {/* Badge */}
             <Reveal>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  background: "rgba(0,32,159,0.08)",
-                  border: "1px solid rgba(0,32,159,0.15)",
-                  borderRadius: 100,
-                  padding: "5px 14px 5px 8px",
-                  marginBottom: 28,
-                }}
-              >
-                <div
-                  style={{
-                    width: 18,
-                    height: 18,
-                    borderRadius: "50%",
-                    background: "rgba(0,32,159,0.2)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: C.teal, animation: "pulse2 2s infinite" }} />
-                </div>
-                <span style={{ fontSize: 12, color: C.teal, fontWeight: 600, fontFamily: F1, letterSpacing: 1.5 }}>
-                  EST. 1813 · ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN
-                </span>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,32,159,0.07)", border: "1px solid rgba(0,32,159,0.14)", borderRadius: 100, padding: "6px 16px 6px 8px", marginBottom: 32 }}>
+                <div style={{ width: 8, height: 8, borderRadius: "50%", background: C.teal, animation: "pulse2 2s infinite" }} />
+                <span style={{ fontSize: 11.5, color: C.teal, fontWeight: 700, fontFamily: F1, letterSpacing: 1.5 }}>EST. 1813 · ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN</span>
               </div>
             </Reveal>
 
+            {/* Headline */}
             <Reveal delay={0.1}>
-              <h1
-                style={{
-                  fontSize: 64,
-                  fontWeight: 800,
-                  color: C.white,
-                  lineHeight: 1.02,
-                  margin: "0 0 24px",
-                  fontFamily: F1,
-                  letterSpacing: -2.5,
-                }}
-              >
-                212 years of history.<br />Now on blockchain.<br />
-                <span style={{ color: C.accent }}>The Haitian gourde, digital.</span>
+              <h1 style={{ fontSize: 68, fontWeight: 800, color: C.text, lineHeight: 1.0, margin: "0 0 24px", fontFamily: F1, letterSpacing: -3 }}>
+                212 years<br />of history.<br /><span style={{ color: C.accent }}>Now on blockchain.</span>
               </h1>
             </Reveal>
 
+            {/* Subtext */}
             <Reveal delay={0.2}>
-              <p style={{ fontSize: 18, color: C.gray, lineHeight: 1.75, maxWidth: 480, margin: "0 0 36px", fontFamily: F2 }}>
-                The Haitian gourde has been sovereign currency since 1813 — making HTGC one of the world's oldest national currencies
-                ever tokenized. Pegged 1:1, backed by Haiti's treasury. Issued by{" "}
-                <strong style={{ color: C.white }}>Insfers</strong>.
+              <p style={{ fontSize: 18, color: C.sub, lineHeight: 1.8, maxWidth: 500, margin: "0 0 40px", fontFamily: F2 }}>
+                HTGC is the Haitian gourde on blockchain — pegged 1:1, backed by Haiti's treasury bills and bonds. One of the world's oldest national currencies, finally tokenized. Issued by <strong style={{ color: C.text }}>Insfers</strong>.
               </p>
             </Reveal>
 
+            {/* CTA row */}
             <Reveal delay={0.3}>
-              <div style={{ display: "flex", gap: 14 }}>
-                <a
-                  href="#cta"
-                  style={{
-                    background: `linear-gradient(135deg, ${C.accent}, ${C.gold})`,
-                    color: C.bg,
-                    padding: "15px 32px",
-                    borderRadius: 14,
-                    fontSize: 15,
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    fontFamily: F1,
-                    boxShadow: "0 8px 32px rgba(209,34,41,0.25)",
-                  }}
-                >
+              <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+                <a href="#cta" style={{ background: C.accent, color: "#fff", padding: "15px 34px", borderRadius: 12, fontSize: 15, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 6px 28px rgba(209,34,41,0.28)", transition: "transform 0.2s, box-shadow 0.2s" }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 10px 36px rgba(209,34,41,0.38)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 6px 28px rgba(209,34,41,0.28)"; }}>
                   Join Waitlist
                 </a>
-                <a
-                  href="#how"
-                  style={{
-                    background: "rgba(0,0,0,0.05)",
-                    color: C.white,
-                    padding: "15px 28px",
-                    borderRadius: 14,
-                    fontSize: 15,
-                    fontWeight: 600,
-                    textDecoration: "none",
-                    fontFamily: F2,
-                    border: `1px solid rgba(0,0,0,0.08)`,
-                  }}
-                >
-                  How It Works
+                <a href="#how" style={{ color: C.text, padding: "15px 28px", borderRadius: 12, fontSize: 15, fontWeight: 600, textDecoration: "none", fontFamily: F2, border: "1.5px solid rgba(0,0,0,0.1)", background: "transparent" }}>
+                  How It Works →
                 </a>
+              </div>
+            </Reveal>
+
+            {/* Quick stats row */}
+            <Reveal delay={0.4}>
+              <div style={{ display: "flex", gap: 36, marginTop: 52, paddingTop: 36, borderTop: "1px solid rgba(0,0,0,0.07)" }}>
+                {[{ n: "<2%", l: "Transfer fee" }, { n: "1:1", l: "HTG peg" }, { n: "24/7", l: "Availability" }, { n: "~5s", l: "Settlement" }].map((s, i) => (
+                  <div key={i}>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: i % 2 === 0 ? C.accent : C.teal, fontFamily: F1 }}>{s.n}</div>
+                    <div style={{ fontSize: 12, color: C.gray, fontFamily: F2, marginTop: 2 }}>{s.l}</div>
+                  </div>
+                ))}
               </div>
             </Reveal>
           </div>
 
-          <Reveal delay={0.4} style={{ display: "flex", justifyContent: "center" }}>
+          {/* Token visual */}
+          <Reveal delay={0.35} style={{ display: "flex", justifyContent: "center" }}>
             <AnimatedCoin />
           </Reveal>
         </div>
       </section>
 
       {/* ══════ TICKER ══════ */}
-      <div
-        style={{
-          background: C.bg,
-          borderTop: `1px solid ${C.border}`,
-          borderBottom: `1px solid ${C.border}`,
-          overflow: "hidden",
-          padding: "16px 0",
-        }}
-      >
-        <div style={{ display: "flex", animation: "marquee 30s linear infinite", width: "max-content" }}>
+      <div style={{ background: DARK, overflow: "hidden", padding: "14px 0" }}>
+        <div style={{ display: "flex", animation: "marquee 35s linear infinite", width: "max-content" }}>
           {[...Array(2)].flatMap((_, rep) =>
             tickerItems.map((item, i) => (
-              <div
-                key={`${rep}-${i}`}
-                style={{ display: "flex", alignItems: "center", gap: 8, paddingRight: 48, whiteSpace: "nowrap" }}
-              >
-                <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.c }} />
-                <span style={{ fontSize: 12, fontWeight: 700, color: item.c, fontFamily: F1, letterSpacing: 2 }}>{item.l}</span>
+              <div key={`${rep}-${i}`} style={{ display: "flex", alignItems: "center", gap: 10, paddingRight: 56, whiteSpace: "nowrap" }}>
+                <img src={tokenImg} alt="" style={{ width: 16, height: 16, objectFit: "contain", opacity: 0.7 }} />
+                <span style={{ fontSize: 11.5, fontWeight: 700, color: item.c, fontFamily: F1, letterSpacing: 2 }}>{item.l}</span>
               </div>
             ))
           )}
@@ -248,105 +170,59 @@ export default function App() {
       </div>
 
       {/* ══════ CALCULATOR ══════ */}
-      <section id="send" style={{ background: C.bg, padding: "120px 32px", position: "relative" }}>
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: `radial-gradient(ellipse 50% 40% at 70% 50%, rgba(0,32,159,0.04), transparent)`,
-          }}
-        />
-        <div
-          style={{
-            maxWidth: 1100,
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 420px",
-            gap: 80,
-            alignItems: "center",
-            position: "relative",
-            zIndex: 2,
-          }}
-        >
+      <section id="send" style={{ background: "#F8F8FA", padding: "120px 48px", position: "relative", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        <div style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 440px", gap: 88, alignItems: "center" }}>
           <div>
-            <Reveal>
-              <div style={{ fontSize: 12, fontWeight: 700, color: C.accent, letterSpacing: 3, fontFamily: F1, marginBottom: 16 }}>
-                REMITTANCES
-              </div>
-            </Reveal>
+            <Reveal><Label>Remittances</Label></Reveal>
             <Reveal delay={0.1}>
-              <h2
-                style={{
-                  fontSize: 44,
-                  fontWeight: 800,
-                  color: C.white,
-                  lineHeight: 1.1,
-                  margin: "0 0 20px",
-                  fontFamily: F1,
-                  letterSpacing: -1.5,
-                }}
-              >
-                $164-328M in fees.<br />
-                <span style={{ color: C.gray }}>Every year. From Haiti's poorest families.</span>
+              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, lineHeight: 1.08, margin: "0 0 20px", fontFamily: F1, letterSpacing: -1.8 }}>
+                $164–328M in fees.<br /><span style={{ color: C.gray, fontWeight: 600 }}>Every year. From Haiti's poorest families.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
-              <p style={{ fontSize: 17, color: C.sub, lineHeight: 1.8, margin: "0 0 32px", fontFamily: F2 }}>
-                Haiti received $4.1 billion in remittances in 2024. Traditional services charge 4-8% in fees. HTGC cuts that to
-                under 2%. Try the calculator.
+              <p style={{ fontSize: 17, color: C.sub, lineHeight: 1.85, margin: "0 0 36px", fontFamily: F2 }}>
+                Haiti received $4.1 billion in remittances in 2024. Traditional services charge 4–8% in fees. HTGC cuts that to under 2%. Try the calculator.
               </p>
             </Reveal>
+            {/* Token + network badges */}
             <Reveal delay={0.3}>
-              <div style={{ display: "flex", gap: 32 }}>
-                {[{ n: "<2%", l: "Transfer fee" }, { n: "~5 min", l: "Settlement" }, { n: "24/7", l: "Availability" }].map((s, i) => (
-                  <div key={i}>
-                    <div style={{ fontSize: 28, fontWeight: 800, color: C.teal, fontFamily: F1 }}>{s.n}</div>
-                    <div style={{ fontSize: 13, color: C.gray, fontFamily: F2, marginTop: 2 }}>{s.l}</div>
-                  </div>
-                ))}
+              <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "20px 24px", background: "#fff", borderRadius: 16, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)", width: "fit-content" }}>
+                <img src={tokenImg} alt="HTGC" style={{ width: 44, height: 44, objectFit: "contain" }} />
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: C.text, fontFamily: F1 }}>1 HTGC = 1 HTG</div>
+                  <div style={{ fontSize: 12, color: C.gray, fontFamily: F2, marginTop: 2 }}>Always redeemable · Solana & Stellar</div>
+                </div>
               </div>
             </Reveal>
           </div>
-          <Reveal delay={0.3}>
-            <Calculator />
-          </Reveal>
+          <Reveal delay={0.25}><Calculator /></Reveal>
         </div>
       </section>
 
       {/* ══════ HOW IT WORKS ══════ */}
-      <section id="how" style={{ background: `linear-gradient(180deg, ${C.bg}, ${C.navy})`, padding: "120px 32px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+      <section id="how" style={{ background: DARK, padding: "120px 48px" }}>
+        <div style={{ maxWidth: 1060, margin: "0 auto" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 72 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: C.teal, letterSpacing: 3, fontFamily: F1, marginBottom: 12 }}>
-                MINT & BURN
-              </div>
-              <h2 style={{ fontSize: 44, fontWeight: 800, color: C.white, fontFamily: F1, letterSpacing: -1.5, margin: 0 }}>
-                How HTGC works
-              </h2>
+              <div style={{ fontSize: 11, fontWeight: 700, color: C.teal, letterSpacing: 3, fontFamily: F1, marginBottom: 14 }}>MINT & BURN</div>
+              <h2 style={{ fontSize: 46, fontWeight: 800, color: "#fff", fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>How HTGC works</h2>
             </div>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, position: "relative" }}>
+            {/* connector line */}
+            <div style={{ position: "absolute", top: 44, left: "12.5%", right: "12.5%", height: 1, background: "linear-gradient(90deg, rgba(209,34,41,0.3), rgba(0,32,159,0.3))", zIndex: 0 }} />
             {steps.map((s, i) => (
               <Reveal key={i} delay={i * 0.1}>
-                <div
-                  style={{
-                    background: C.card,
-                    borderRadius: 20,
-                    padding: "32px 24px",
-                    border: `1px solid ${C.border}`,
-                    textAlign: "center",
-                    transition: "border-color 0.3s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(209,34,41,0.2)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = C.border)}
-                >
-                  <div style={{ fontSize: 32, marginBottom: 16, color: C.accent, opacity: 0.6 }}>{s.icon}</div>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: C.teal, fontFamily: F1, letterSpacing: 2, marginBottom: 8 }}>
-                    STEP {s.n}
+                <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 20, padding: "36px 24px 28px", border: "1px solid rgba(255,255,255,0.07)", textAlign: "center", position: "relative", zIndex: 1, transition: "background 0.3s, border-color 0.3s" }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.borderColor = "rgba(209,34,41,0.3)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)"; }}>
+                  {/* step icon circle */}
+                  <div style={{ width: 52, height: 52, borderRadius: "50%", background: i % 2 === 0 ? "rgba(209,34,41,0.15)" : "rgba(0,32,159,0.15)", border: `1px solid ${i % 2 === 0 ? "rgba(209,34,41,0.3)" : "rgba(0,32,159,0.3)"}`, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", fontSize: 22, color: i % 2 === 0 ? C.accent : C.teal }}>
+                    {s.icon}
                   </div>
-                  <h3 style={{ fontSize: 20, fontWeight: 700, color: C.white, margin: "0 0 10px", fontFamily: F1 }}>{s.t}</h3>
-                  <p style={{ fontSize: 13.5, color: C.gray, lineHeight: 1.65, margin: 0, fontFamily: F2 }}>{s.d}</p>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: i % 2 === 0 ? C.accent : C.teal, fontFamily: F1, letterSpacing: 2.5, marginBottom: 8 }}>STEP {s.n}</div>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: "#fff", margin: "0 0 10px", fontFamily: F1 }}>{s.t}</h3>
+                  <p style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, margin: 0, fontFamily: F2 }}>{s.d}</p>
                 </div>
               </Reveal>
             ))}
@@ -355,186 +231,108 @@ export default function App() {
       </section>
 
       {/* ══════ RESERVES ══════ */}
-      <section id="reserves" style={{ background: C.off, padding: "120px 32px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <Reveal>
-            <div style={{ textAlign: "center", marginBottom: 64 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: C.accent, letterSpacing: 3, fontFamily: F1, marginBottom: 12 }}>
-                TRANSPARENCY
-              </div>
-              <h2
-                style={{ fontSize: 44, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.5, margin: "0 0 16px" }}
-              >
+      <section id="reserves" style={{ background: "#fff", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        <div style={{ maxWidth: 1060, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: 80, alignItems: "flex-start" }}>
+          {/* Left: text + bars */}
+          <div>
+            <Reveal><Label>Transparency</Label></Reveal>
+            <Reveal delay={0.1}>
+              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 16px" }}>
                 Backed by Haiti's treasury. Always.
               </h2>
-              <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 520, margin: "0 auto" }}>
+              <p style={{ fontSize: 16, color: C.sub, fontFamily: F2, margin: "0 0 40px", lineHeight: 1.8 }}>
                 100% reserves in Haitian sovereign instruments. Audited quarterly. No corporate debt. No crypto collateral.
               </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div
-              style={{
-                background: "#fff",
-                borderRadius: 24,
-                padding: 40,
-                boxShadow: "0 2px 40px rgba(0,0,0,0.04)",
-                border: "1px solid rgba(0,0,0,0.04)",
-              }}
-            >
-              <div style={{ display: "flex", height: 20, borderRadius: 10, overflow: "hidden", marginBottom: 32, gap: 2 }}>
+            </Reveal>
+            <Reveal delay={0.2}>
+              {/* Stacked bar */}
+              <div style={{ display: "flex", height: 14, borderRadius: 7, overflow: "hidden", marginBottom: 28, gap: 2 }}>
                 {reserveBars.map((b, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      width: `${b.pct}%`,
-                      background: b.color,
-                      borderRadius:
-                        i === 0 ? "10px 0 0 10px" : i === reserveBars.length - 1 ? "0 10px 10px 0" : 0,
-                    }}
-                  />
+                  <div key={i} style={{ width: `${b.pct}%`, background: b.color, borderRadius: i === 0 ? "7px 0 0 7px" : i === reserveBars.length - 1 ? "0 7px 7px 0" : 0 }} />
                 ))}
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px 24px" }}>
                 {reserveBars.map((b, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                    <div
-                      style={{ width: 10, height: 10, borderRadius: 3, background: b.color, marginTop: 4, flexShrink: 0 }}
-                    />
+                    <div style={{ width: 10, height: 10, borderRadius: 3, background: b.color, marginTop: 5, flexShrink: 0 }} />
                     <div>
-                      <div style={{ fontSize: 22, fontWeight: 800, color: C.text, fontFamily: F1 }}>{b.pct}%</div>
-                      <div style={{ fontSize: 13, color: C.sub, fontFamily: F2, lineHeight: 1.4 }}>{b.label}</div>
-                      <div style={{ fontSize: 12, color: C.accent, fontWeight: 600, fontFamily: F1, marginTop: 2 }}>
-                        Yield: {b.yield}
-                      </div>
+                      <div style={{ fontSize: 20, fontWeight: 800, color: C.text, fontFamily: F1 }}>{b.pct}%</div>
+                      <div style={{ fontSize: 12.5, color: C.sub, fontFamily: F2, lineHeight: 1.4 }}>{b.label}</div>
+                      <div style={{ fontSize: 11.5, color: C.accent, fontWeight: 600, fontFamily: F1, marginTop: 1 }}>Yield: {b.yield}</div>
                     </div>
                   </div>
                 ))}
               </div>
-              <div
-                style={{
-                  marginTop: 28,
-                  paddingTop: 24,
-                  borderTop: "1px solid rgba(0,0,0,0.06)",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  gap: 16,
-                }}
-              >
+              <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(0,0,0,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: C.text, fontFamily: F1 }}>
-                    Blended Reserve Yield: ~16.2%
-                  </div>
-                  <div style={{ fontSize: 13, color: C.sub, fontFamily: F2 }}>
-                    Self-sustaining. Low fees for users. Income from sovereignty.
-                  </div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: C.text, fontFamily: F1 }}>Blended Reserve Yield: ~16.2%</div>
+                  <div style={{ fontSize: 12.5, color: C.sub, fontFamily: F2, marginTop: 2 }}>Self-sustaining. Low fees for users.</div>
                 </div>
-                <a
-                  href="#"
-                  style={{
-                    background: C.text,
-                    color: C.white,
-                    padding: "10px 20px",
-                    borderRadius: 10,
-                    fontSize: 13,
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    fontFamily: F1,
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  View Attestation →
-                </a>
+                <a href="#" style={{ background: C.text, color: "#fff", padding: "10px 20px", borderRadius: 10, fontSize: 13, fontWeight: 700, textDecoration: "none", fontFamily: F1, whiteSpace: "nowrap" }}>View Attestation →</a>
               </div>
+            </Reveal>
+          </div>
+          {/* Right: token + trust badges */}
+          <Reveal delay={0.3}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 24 }}>
+              <img src={tokenImg} alt="HTGC Token" style={{ width: 220, height: 220, objectFit: "contain", filter: "drop-shadow(0 12px 32px rgba(0,32,159,0.18))", animation: "tokenFloat 4s ease-in-out infinite" }} />
+              <div style={{ background: "#F8F8FA", borderRadius: 16, padding: "20px 24px", border: "1px solid rgba(0,0,0,0.07)", width: "100%", textAlign: "center" }}>
+                <div style={{ fontSize: 28, fontWeight: 800, color: C.teal, fontFamily: F1 }}>~16.2%</div>
+                <div style={{ fontSize: 13, color: C.sub, fontFamily: F2, marginTop: 4 }}>Blended annual reserve yield</div>
+              </div>
+              {[{ icon: "✓", t: "100% Reserve Coverage" }, { icon: "✓", t: "Quarterly Audits" }, { icon: "✓", t: "BRH Oversight" }].map((b, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, width: "100%" }}>
+                  <div style={{ width: 24, height: 24, borderRadius: "50%", background: "rgba(0,32,159,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: C.teal, fontWeight: 700, flexShrink: 0 }}>{b.icon}</div>
+                  <span style={{ fontSize: 13.5, color: C.text, fontFamily: F2, fontWeight: 500 }}>{b.t}</span>
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* ══════ NETWORKS ══════ */}
-      <section id="networks" style={{ background: C.bg, padding: "120px 32px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+      <section id="networks" style={{ background: "#F8F8FA", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        <div style={{ maxWidth: 1060, margin: "0 auto" }}>
           <Reveal>
-            <h2
-              style={{
-                fontSize: 44,
-                fontWeight: 800,
-                color: C.white,
-                fontFamily: F1,
-                letterSpacing: -1.5,
-                textAlign: "center",
-                margin: "0 0 16px",
-              }}
-            >
-              Two chains. One gourde.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p
-              style={{
-                fontSize: 17,
-                color: C.gray,
-                fontFamily: F2,
-                textAlign: "center",
-                maxWidth: 500,
-                margin: "0 auto 56px",
-              }}
-            >
-              Natively issued on Solana and Stellar. Same reserves. Different superpowers.
-            </p>
+            <div style={{ textAlign: "center", marginBottom: 60 }}>
+              <Label color={C.teal}>Blockchain Networks</Label>
+              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Two chains. One gourde.</h2>
+              <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 480, margin: "0 auto" }}>Natively issued on Solana and Stellar. Same reserves. Different superpowers.</p>
+            </div>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             {networks.map((n, i) => (
               <Reveal key={i} delay={i * 0.15}>
-                <div
-                  style={{
-                    background: C.card,
-                    borderRadius: 24,
-                    padding: 36,
-                    border: `1px solid ${C.border}`,
-                    transition: "border-color 0.3s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = `${n.color}33`)}
-                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = C.border)}
-                >
+                <div style={{ background: "#fff", borderRadius: 24, padding: "36px 36px 32px", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)", transition: "box-shadow 0.3s, transform 0.3s" }}
+                  onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 12px 40px ${n.color}22`; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.04)"; e.currentTarget.style.transform = "none"; }}>
+                  {/* Header */}
                   <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
-                    <div
-                      style={{
-                        width: 44,
-                        height: 44,
-                        borderRadius: 12,
-                        background: n.grad,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: 18,
-                        fontWeight: 800,
-                        color: C.white,
-                        fontFamily: F1,
-                      }}
-                    >
+                    <div style={{ width: 48, height: 48, borderRadius: 14, background: n.grad, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 800, color: "#fff", fontFamily: F1, boxShadow: `0 4px 14px ${n.color}44` }}>
                       {n.name[0]}
                     </div>
                     <div>
-                      <div style={{ fontSize: 20, fontWeight: 700, color: C.white, fontFamily: F1 }}>{n.name}</div>
+                      <div style={{ fontSize: 20, fontWeight: 700, color: C.text, fontFamily: F1 }}>{n.name}</div>
                       <div style={{ fontSize: 12, color: C.gray, fontFamily: F2 }}>{n.sub}</div>
                     </div>
+                    {/* Token mini */}
+                    <img src={tokenImg} alt="" style={{ width: 32, height: 32, objectFit: "contain", marginLeft: "auto", opacity: 0.85 }} />
                   </div>
-                  <p style={{ fontSize: 14.5, color: C.sub, lineHeight: 1.7, margin: "0 0 20px", fontFamily: F2 }}>{n.desc}</p>
-                  <div style={{ display: "flex", gap: 24, marginBottom: 20 }}>
+                  <p style={{ fontSize: 14, color: C.sub, lineHeight: 1.75, margin: "0 0 24px", fontFamily: F2 }}>{n.desc}</p>
+                  {/* Metrics */}
+                  <div style={{ display: "flex", gap: 0, marginBottom: 24, background: "#F8F8FA", borderRadius: 12, overflow: "hidden" }}>
                     {[{ l: "Finality", v: n.speed }, { l: "Cost/tx", v: n.cost }].map((m, j) => (
-                      <div key={j}>
-                        <div style={{ fontSize: 11, color: C.gray, fontFamily: F2, marginBottom: 2 }}>{m.l}</div>
-                        <div style={{ fontSize: 18, fontWeight: 800, color: n.color, fontFamily: F1 }}>{m.v}</div>
+                      <div key={j} style={{ flex: 1, padding: "14px 20px", borderRight: j === 0 ? "1px solid rgba(0,0,0,0.06)" : "none" }}>
+                        <div style={{ fontSize: 10.5, color: C.gray, fontFamily: F2, marginBottom: 4, letterSpacing: 0.5 }}>{m.l}</div>
+                        <div style={{ fontSize: 20, fontWeight: 800, color: n.color, fontFamily: F1 }}>{m.v}</div>
                       </div>
                     ))}
                   </div>
                   {n.features.map((f, j) => (
-                    <div key={j} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                      <div style={{ width: 4, height: 4, borderRadius: "50%", background: n.color, opacity: 0.6 }} />
-                      <span style={{ fontSize: 13, color: C.gray, fontFamily: F2 }}>{f}</span>
+                    <div key={j} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                      <div style={{ width: 18, height: 18, borderRadius: "50%", background: `${n.color}15`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, color: n.color, fontWeight: 700, flexShrink: 0 }}>✓</div>
+                      <span style={{ fontSize: 13.5, color: C.text, fontFamily: F2 }}>{f}</span>
                     </div>
                   ))}
                 </div>
@@ -545,55 +343,25 @@ export default function App() {
       </section>
 
       {/* ══════ IMPACT GRID ══════ */}
-      <section
-        style={{
-          background: `linear-gradient(165deg, ${C.navy}, #0A0A1A)`,
-          padding: "120px 32px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.012) 1px, transparent 1px)`,
-            backgroundSize: "80px 80px",
-          }}
-        />
+      <section style={{ background: DARK2, padding: "120px 48px", position: "relative", overflow: "hidden" }}>
+        {/* Token watermark */}
+        <img src={tokenImg} alt="" style={{ position: "absolute", right: -60, top: "50%", transform: "translateY(-50%)", width: 480, opacity: 0.04, pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <Reveal>
-            <h2
-              style={{
-                fontSize: 44,
-                fontWeight: 800,
-                color: C.white,
-                fontFamily: F1,
-                letterSpacing: -1.5,
-                textAlign: "center",
-                margin: "0 0 56px",
-              }}
-            >
-              Built for Haiti. Available everywhere.
-            </h2>
+            <div style={{ textAlign: "center", marginBottom: 64 }}>
+              <Label color={C.teal}>Impact</Label>
+              <h2 style={{ fontSize: 46, fontWeight: 800, color: "#fff", fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>Built for Haiti. Available everywhere.</h2>
+            </div>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
             {impactStats.map((s, i) => (
               <Reveal key={i} delay={i * 0.08}>
-                <div
-                  style={{
-                    background: "rgba(0,0,0,0.04)",
-                    borderRadius: 16,
-                    padding: 28,
-                    border: `1px solid rgba(0,0,0,0.06)`,
-                    transition: "background 0.3s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(0,0,0,0.07)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(0,0,0,0.04)")}
-                >
-                  <div style={{ fontSize: 28, fontWeight: 800, fontFamily: F1, color: C.accent }}>{s.s}</div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: C.white, margin: "6px 0 4px", fontFamily: F1 }}>{s.l}</div>
-                  <div style={{ fontSize: 13, color: C.gray, fontFamily: F2 }}>{s.d}</div>
+                <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 18, padding: "28px 28px 24px", border: "1px solid rgba(255,255,255,0.07)", transition: "background 0.25s, transform 0.25s" }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.transform = "none"; }}>
+                  <div style={{ fontSize: 32, fontWeight: 800, fontFamily: F1, color: i % 2 === 0 ? C.accent : C.teal, marginBottom: 8 }}>{s.s}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "#fff", margin: "0 0 6px", fontFamily: F1 }}>{s.l}</div>
+                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontFamily: F2, lineHeight: 1.6 }}>{s.d}</div>
                 </div>
               </Reveal>
             ))}
@@ -602,45 +370,25 @@ export default function App() {
       </section>
 
       {/* ══════ REGULATED ══════ */}
-      <section style={{ background: C.off, padding: "120px 32px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+      <section style={{ background: "#fff", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        <div style={{ maxWidth: 1060, margin: "0 auto" }}>
           <Reveal>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2
-                style={{ fontSize: 44, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.5, margin: "0 0 16px" }}
-              >
-                Regulated everywhere it matters.
-              </h2>
-              <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 520, margin: "0 auto" }}>
-                Compliance-first. Every jurisdiction. Every transaction. No shortcuts.
-              </p>
+            <div style={{ textAlign: "center", marginBottom: 60 }}>
+              <Label color={C.accent}>Compliance</Label>
+              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Regulated everywhere it matters.</h2>
+              <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 500, margin: "0 auto" }}>Compliance-first. Every jurisdiction. Every transaction. No shortcuts.</p>
             </div>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {regulations.map((r, i) => (
-              <Reveal key={i} delay={i * 0.08}>
-                <div
-                  style={{
-                    background: "#fff",
-                    borderRadius: 18,
-                    padding: 24,
-                    border: "1px solid rgba(0,0,0,0.04)",
-                    textAlign: "center",
-                    transition: "transform 0.3s, box-shadow 0.3s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-4px)";
-                    e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.06)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "none";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <div style={{ fontSize: 36, marginBottom: 12 }}>{r.flag}</div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: C.text, fontFamily: F1, marginBottom: 4 }}>{r.j}</div>
-                  <div style={{ fontSize: 12.5, fontWeight: 600, color: C.accent, fontFamily: F1, marginBottom: 4 }}>{r.r}</div>
-                  <div style={{ fontSize: 12, color: C.sub, fontFamily: F2 }}>{r.d}</div>
+              <Reveal key={i} delay={i * 0.1}>
+                <div style={{ background: "#F8F8FA", borderRadius: 20, padding: "28px 20px", border: "1px solid rgba(0,0,0,0.06)", textAlign: "center", transition: "transform 0.25s, box-shadow 0.25s, background 0.25s" }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-5px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,0,0,0.08)"; e.currentTarget.style.background = "#fff"; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = "#F8F8FA"; }}>
+                  <div style={{ fontSize: 40, marginBottom: 14 }}>{r.flag}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: C.text, fontFamily: F1, marginBottom: 5 }}>{r.j}</div>
+                  <div style={{ fontSize: 11.5, fontWeight: 700, color: C.accent, fontFamily: F1, marginBottom: 5, letterSpacing: 0.3 }}>{r.r}</div>
+                  <div style={{ fontSize: 11.5, color: C.sub, fontFamily: F2 }}>{r.d}</div>
                 </div>
               </Reveal>
             ))}
@@ -649,68 +397,35 @@ export default function App() {
       </section>
 
       {/* ══════ CTA ══════ */}
-      <section id="cta" style={{ background: C.bg, padding: "120px 32px", position: "relative", overflow: "hidden" }}>
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: `radial-gradient(ellipse 60% 50% at 50% 50%, rgba(209,34,41,0.08), transparent)`,
-          }}
-        />
-        <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
+      <section id="cta" style={{ background: DARK, padding: "140px 48px", position: "relative", overflow: "hidden" }}>
+        {/* Big token background watermark */}
+        <img src={tokenImg} alt="" style={{ position: "absolute", right: -80, top: "50%", transform: "translateY(-50%)", width: 520, opacity: 0.06, pointerEvents: "none" }} />
+        <img src={tokenImg} alt="" style={{ position: "absolute", left: -100, top: "50%", transform: "translateY(-50%) scaleX(-1)", width: 400, opacity: 0.03, pointerEvents: "none" }} />
+        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
+          {/* Token icon */}
           <Reveal>
-            <h2
-              style={{
-                fontSize: 48,
-                fontWeight: 800,
-                color: C.white,
-                fontFamily: F1,
-                letterSpacing: -2,
-                margin: "0 0 20px",
-                lineHeight: 1.1,
-              }}
-            >
-              One of the world's oldest currencies.<br />On the newest rails.
+            <img src={tokenImg} alt="HTGC" style={{ width: 88, height: 88, objectFit: "contain", marginBottom: 28, filter: "drop-shadow(0 8px 24px rgba(0,32,159,0.4))" }} />
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 style={{ fontSize: 52, fontWeight: 800, color: "#fff", fontFamily: F1, letterSpacing: -2.2, margin: "0 0 20px", lineHeight: 1.05 }}>
+              One of the world's oldest<br />currencies, on the newest rails.
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
-            <p style={{ fontSize: 18, color: C.gray, fontFamily: F2, margin: "0 0 40px", lineHeight: 1.7 }}>
-              The Haitian gourde has survived 212 years of history. Now it goes global.
-              Be first to send, hold, and build with the digital gourde.
+          <Reveal delay={0.12}>
+            <p style={{ fontSize: 18, color: "rgba(255,255,255,0.5)", fontFamily: F2, margin: "0 0 44px", lineHeight: 1.75 }}>
+              The Haitian gourde has survived 212 years of history. Now it goes global. Be first to send, hold, and build with HTGC.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <div style={{ display: "flex", gap: 14, justifyContent: "center" }}>
-              <a
-                href="https://insfers.com"
-                style={{
-                  background: `linear-gradient(135deg, ${C.accent}, ${C.gold})`,
-                  color: C.bg,
-                  padding: "16px 36px",
-                  borderRadius: 14,
-                  fontSize: 16,
-                  fontWeight: 700,
-                  textDecoration: "none",
-                  fontFamily: F1,
-                  boxShadow: "0 8px 40px rgba(209,34,41,0.3)",
-                }}
-              >
+            <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+              <a href="https://insfers.com" style={{ background: C.accent, color: "#fff", padding: "16px 38px", borderRadius: 13, fontSize: 16, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 8px 32px rgba(209,34,41,0.4)", transition: "transform 0.2s, box-shadow 0.2s" }}
+                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 44px rgba(209,34,41,0.5)"; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(209,34,41,0.4)"; }}>
                 Join Waitlist
               </a>
-              <a
-                href="#"
-                style={{
-                  background: "rgba(0,0,0,0.05)",
-                  color: C.white,
-                  padding: "16px 32px",
-                  borderRadius: 14,
-                  fontSize: 16,
-                  fontWeight: 600,
-                  textDecoration: "none",
-                  fontFamily: F2,
-                  border: `1px solid ${C.border}`,
-                }}
-              >
+              <a href="#" style={{ background: "rgba(255,255,255,0.07)", color: "#fff", padding: "16px 32px", borderRadius: 13, fontSize: 16, fontWeight: 600, textDecoration: "none", fontFamily: F2, border: "1px solid rgba(255,255,255,0.12)", transition: "background 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}>
                 Read the Whitepaper
               </a>
             </div>
@@ -719,43 +434,24 @@ export default function App() {
       </section>
 
       {/* ══════ FOOTER ══════ */}
-      <footer style={{ background: C.bg, borderTop: `1px solid ${C.border}`, padding: "56px 32px 28px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "2.5fr 1fr 1fr 1fr", gap: 40, marginBottom: 40 }}>
+      <footer style={{ background: DARK2, borderTop: "1px solid rgba(255,255,255,0.05)", padding: "64px 48px 32px" }}>
+        <div style={{ maxWidth: 1140, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "2.4fr 1fr 1fr 1fr", gap: 40, marginBottom: 52 }}>
+            {/* Brand */}
             <div>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-                <div
-                  style={{
-                    width: 28,
-                    height: 28,
-                    borderRadius: "50%",
-                    background: `linear-gradient(135deg, ${C.accent}, ${C.teal})`,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                    fontWeight: 800,
-                    color: C.bg,
-                    fontFamily: F1,
-                  }}
-                >
-                  G
-                </div>
-                <span style={{ fontSize: 16, fontWeight: 800, color: C.white, fontFamily: F1 }}>HTGC</span>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                <img src={tokenImg} alt="HTGC" style={{ width: 36, height: 36, objectFit: "contain" }} />
+                <span style={{ fontSize: 18, fontWeight: 800, color: "#fff", fontFamily: F1, letterSpacing: -0.5 }}>HTGC</span>
               </div>
-              <p
-                style={{
-                  fontSize: 13,
-                  color: "rgba(0,0,0,0.35)",
-                  lineHeight: 1.7,
-                  maxWidth: 300,
-                  fontFamily: F2,
-                  margin: 0,
-                }}
-              >
-                Issued by Insfers. A regulated payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's
-                treasury bills and bonds. Not legal tender.
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.3)", lineHeight: 1.75, maxWidth: 290, fontFamily: F2, margin: "0 0 24px" }}>
+                Issued by Insfers. A regulated payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's treasury bills and bonds. Not legal tender.
               </p>
+              {/* Chain badges */}
+              <div style={{ display: "flex", gap: 8 }}>
+                {["Solana", "Stellar"].map(chain => (
+                  <div key={chain} style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.4)", fontFamily: F1, padding: "5px 12px", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, letterSpacing: 0.5 }}>{chain}</div>
+                ))}
+              </div>
             </div>
             {[
               { t: "Product", l: ["How It Works", "Reserves", "Networks", "API & SDKs", "Whitepaper"] },
@@ -763,54 +459,20 @@ export default function App() {
               { t: "Legal", l: ["Terms", "Privacy", "Compliance", "Risk Disclosures", "Licenses"] },
             ].map((col, i) => (
               <div key={i}>
-                <div
-                  style={{
-                    fontSize: 11,
-                    fontWeight: 700,
-                    color: C.gray,
-                    marginBottom: 14,
-                    fontFamily: F1,
-                    letterSpacing: 2,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {col.t}
-                </div>
-                {col.l.map((link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    style={{
-                      display: "block",
-                      fontSize: 13.5,
-                      color: "rgba(0,0,0,0.4)",
-                      textDecoration: "none",
-                      marginBottom: 9,
-                      fontFamily: F2,
-                      transition: "color 0.2s",
-                    }}
-                    onMouseEnter={(e) => (e.target.style.color = C.white)}
-                    onMouseLeave={(e) => (e.target.style.color = "rgba(0,0,0,0.4)")}
-                  >
+                <div style={{ fontSize: 10.5, fontWeight: 700, color: "rgba(255,255,255,0.3)", marginBottom: 16, fontFamily: F1, letterSpacing: 2.5, textTransform: "uppercase" }}>{col.t}</div>
+                {col.l.map(link => (
+                  <a key={link} href="#" style={{ display: "block", fontSize: 13.5, color: "rgba(255,255,255,0.4)", textDecoration: "none", marginBottom: 10, fontFamily: F2, transition: "color 0.2s" }}
+                    onMouseEnter={e => (e.target.style.color = "#fff")}
+                    onMouseLeave={e => (e.target.style.color = "rgba(255,255,255,0.4)")}>
                     {link}
                   </a>
                 ))}
               </div>
             ))}
           </div>
-          <div
-            style={{
-              borderTop: `1px solid ${C.border}`,
-              paddingTop: 20,
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <span style={{ fontSize: 12, color: "rgba(0,0,0,0.2)", fontFamily: F2 }}>
-              &copy; 2026 Insfers. All rights reserved.
-            </span>
-            <span style={{ fontSize: 12, color: "rgba(0,0,0,0.2)", fontFamily: F2 }}>Solana &middot; Stellar</span>
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: F2 }}>&copy; 2026 Insfers. All rights reserved.</span>
+            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: F2 }}>Est. 1813 &middot; Haitian Gourde Coin</span>
           </div>
         </div>
       </footer>
