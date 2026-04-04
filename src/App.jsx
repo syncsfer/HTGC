@@ -157,12 +157,12 @@ export default function App() {
       </section>
 
       {/* ══════ TICKER ══════ */}
-      <div style={{ background: DARK, overflow: "hidden", padding: "14px 0" }}>
+      <div style={{ background: "#F0F2F5", overflow: "hidden", padding: "14px 0", borderTop: "1px solid rgba(0,0,0,0.06)", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
         <div style={{ display: "flex", animation: "marquee 35s linear infinite", width: "max-content" }}>
           {[...Array(2)].flatMap((_, rep) =>
             tickerItems.map((item, i) => (
               <div key={`${rep}-${i}`} style={{ display: "flex", alignItems: "center", gap: 10, paddingRight: 56, whiteSpace: "nowrap" }}>
-                <img src={tokenImg} alt="" style={{ width: 16, height: 16, objectFit: "contain", opacity: 0.7 }} />
+                <img src={tokenImg} alt="" style={{ width: 16, height: 16, objectFit: "contain", opacity: 0.6 }} />
                 <span style={{ fontSize: 11.5, fontWeight: 700, color: item.c, fontFamily: F1, letterSpacing: 2 }}>{item.l}</span>
               </div>
             ))
@@ -201,29 +201,28 @@ export default function App() {
       </section>
 
       {/* ══════ HOW IT WORKS ══════ */}
-      <section id="how" style={{ background: DARK, padding: "120px 48px" }}>
+      <section id="how" style={{ background: "#F8F8FA", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
         <div style={{ maxWidth: 1060, margin: "0 auto" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 72 }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: C.teal, letterSpacing: 3, fontFamily: F1, marginBottom: 14 }}>MINT & BURN</div>
-              <h2 style={{ fontSize: 46, fontWeight: 800, color: "#fff", fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>How HTGC works</h2>
+              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>How HTGC works</h2>
             </div>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, position: "relative" }}>
             {/* connector line */}
-            <div style={{ position: "absolute", top: 44, left: "12.5%", right: "12.5%", height: 1, background: "linear-gradient(90deg, rgba(209,34,41,0.3), rgba(0,32,159,0.3))", zIndex: 0 }} />
+            <div style={{ position: "absolute", top: 44, left: "12.5%", right: "12.5%", height: 1, background: "linear-gradient(90deg, rgba(209,34,41,0.2), rgba(0,32,159,0.2))", zIndex: 0 }} />
             {steps.map((s, i) => (
               <Reveal key={i} delay={i * 0.1}>
-                <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 20, padding: "36px 24px 28px", border: "1px solid rgba(255,255,255,0.07)", textAlign: "center", position: "relative", zIndex: 1, transition: "background 0.3s, border-color 0.3s" }}
-                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.borderColor = "rgba(209,34,41,0.3)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)"; }}>
-                  {/* step icon circle */}
-                  <div style={{ width: 52, height: 52, borderRadius: "50%", background: i % 2 === 0 ? "rgba(209,34,41,0.15)" : "rgba(0,32,159,0.15)", border: `1px solid ${i % 2 === 0 ? "rgba(209,34,41,0.3)" : "rgba(0,32,159,0.3)"}`, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", fontSize: 22, color: i % 2 === 0 ? C.accent : C.teal }}>
+                <div style={{ background: "#fff", borderRadius: 20, padding: "36px 24px 28px", border: "1px solid rgba(0,0,0,0.07)", textAlign: "center", position: "relative", zIndex: 1, transition: "box-shadow 0.3s, border-color 0.3s, transform 0.3s" }}
+                  onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.08)"; e.currentTarget.style.borderColor = i % 2 === 0 ? "rgba(209,34,41,0.25)" : "rgba(0,32,159,0.25)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "rgba(0,0,0,0.07)"; e.currentTarget.style.transform = "none"; }}>
+                  <div style={{ width: 52, height: 52, borderRadius: "50%", background: i % 2 === 0 ? "rgba(209,34,41,0.08)" : "rgba(0,32,159,0.08)", border: `1px solid ${i % 2 === 0 ? "rgba(209,34,41,0.2)" : "rgba(0,32,159,0.2)"}`, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", fontSize: 22, color: i % 2 === 0 ? C.accent : C.teal }}>
                     {s.icon}
                   </div>
                   <div style={{ fontSize: 10, fontWeight: 700, color: i % 2 === 0 ? C.accent : C.teal, fontFamily: F1, letterSpacing: 2.5, marginBottom: 8 }}>STEP {s.n}</div>
-                  <h3 style={{ fontSize: 18, fontWeight: 700, color: "#fff", margin: "0 0 10px", fontFamily: F1 }}>{s.t}</h3>
-                  <p style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, margin: 0, fontFamily: F2 }}>{s.d}</p>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: C.text, margin: "0 0 10px", fontFamily: F1 }}>{s.t}</h3>
+                  <p style={{ fontSize: 13, color: C.sub, lineHeight: 1.7, margin: 0, fontFamily: F2 }}>{s.d}</p>
                 </div>
               </Reveal>
             ))}
@@ -344,25 +343,25 @@ export default function App() {
       </section>
 
       {/* ══════ IMPACT GRID ══════ */}
-      <section style={{ background: DARK2, padding: "120px 48px", position: "relative", overflow: "hidden" }}>
+      <section style={{ background: "#F8F8FA", padding: "120px 48px", position: "relative", overflow: "hidden", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
         {/* Token watermark */}
-        <img src={tokenImg} alt="" style={{ position: "absolute", right: -60, top: "50%", transform: "translateY(-50%)", width: 480, opacity: 0.04, pointerEvents: "none" }} />
+        <img src={tokenImg} alt="" style={{ position: "absolute", right: -60, top: "50%", transform: "translateY(-50%)", width: 480, opacity: 0.05, pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 64 }}>
               <Label color={C.teal}>Impact</Label>
-              <h2 style={{ fontSize: 46, fontWeight: 800, color: "#fff", fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>Built for Haiti. Available everywhere.</h2>
+              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>Built for Haiti. Available everywhere.</h2>
             </div>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
             {impactStats.map((s, i) => (
               <Reveal key={i} delay={i * 0.08}>
-                <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 18, padding: "28px 28px 24px", border: "1px solid rgba(255,255,255,0.07)", transition: "background 0.25s, transform 0.25s" }}
-                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.transform = "none"; }}>
+                <div style={{ background: "#fff", borderRadius: 18, padding: "28px 28px 24px", border: "1px solid rgba(0,0,0,0.07)", transition: "box-shadow 0.25s, transform 0.25s" }}
+                  onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.08)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "none"; }}>
                   <div style={{ fontSize: 32, fontWeight: 800, fontFamily: F1, color: i % 2 === 0 ? C.accent : C.teal, marginBottom: 8 }}>{s.s}</div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: "#fff", margin: "0 0 6px", fontFamily: F1 }}>{s.l}</div>
-                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontFamily: F2, lineHeight: 1.6 }}>{s.d}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: C.text, margin: "0 0 6px", fontFamily: F1 }}>{s.l}</div>
+                  <div style={{ fontSize: 13, color: C.sub, fontFamily: F2, lineHeight: 1.6 }}>{s.d}</div>
                 </div>
               </Reveal>
             ))}
@@ -398,35 +397,34 @@ export default function App() {
       </section>
 
       {/* ══════ CTA ══════ */}
-      <section id="cta" style={{ background: DARK, padding: "140px 48px", position: "relative", overflow: "hidden" }}>
-        {/* Big token background watermark */}
-        <img src={tokenImg} alt="" style={{ position: "absolute", right: -80, top: "50%", transform: "translateY(-50%)", width: 520, opacity: 0.06, pointerEvents: "none" }} />
+      <section id="cta" style={{ background: "#fff", padding: "140px 48px", position: "relative", overflow: "hidden", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        {/* Token watermarks */}
+        <img src={tokenImg} alt="" style={{ position: "absolute", right: -80, top: "50%", transform: "translateY(-50%)", width: 520, opacity: 0.05, pointerEvents: "none" }} />
         <img src={tokenImg} alt="" style={{ position: "absolute", left: -100, top: "50%", transform: "translateY(-50%) scaleX(-1)", width: 400, opacity: 0.03, pointerEvents: "none" }} />
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
-          {/* Token icon */}
           <Reveal>
-            <img src={tokenImg} alt="HTGC" style={{ width: 88, height: 88, objectFit: "contain", marginBottom: 28, filter: "drop-shadow(0 8px 24px rgba(0,32,159,0.4))" }} />
+            <img src={tokenImg} alt="HTGC" style={{ width: 88, height: 88, objectFit: "contain", marginBottom: 28, filter: "drop-shadow(0 8px 24px rgba(0,32,159,0.2))" }} />
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 style={{ fontSize: 52, fontWeight: 800, color: "#fff", fontFamily: F1, letterSpacing: -2.2, margin: "0 0 20px", lineHeight: 1.05 }}>
+            <h2 style={{ fontSize: 52, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -2.2, margin: "0 0 20px", lineHeight: 1.05 }}>
               One of the world's oldest<br />currencies, on the newest rails.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
-            <p style={{ fontSize: 18, color: "rgba(255,255,255,0.5)", fontFamily: F2, margin: "0 0 44px", lineHeight: 1.75 }}>
+            <p style={{ fontSize: 18, color: C.sub, fontFamily: F2, margin: "0 0 44px", lineHeight: 1.75 }}>
               The Haitian gourde has survived 212 years of history. Now it goes global. Be first to send, hold, and build with HTGC.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="https://insfers.com" style={{ background: C.accent, color: "#fff", padding: "16px 38px", borderRadius: 13, fontSize: 16, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 8px 32px rgba(209,34,41,0.4)", transition: "transform 0.2s, box-shadow 0.2s" }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 44px rgba(209,34,41,0.5)"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(209,34,41,0.4)"; }}>
+              <a href="https://insfers.com" style={{ background: C.accent, color: "#fff", padding: "16px 38px", borderRadius: 13, fontSize: 16, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 8px 32px rgba(209,34,41,0.25)", transition: "transform 0.2s, box-shadow 0.2s" }}
+                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 44px rgba(209,34,41,0.38)"; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(209,34,41,0.25)"; }}>
                 Join Waitlist
               </a>
-              <a href="#" style={{ background: "rgba(255,255,255,0.07)", color: "#fff", padding: "16px 32px", borderRadius: 13, fontSize: 16, fontWeight: 600, textDecoration: "none", fontFamily: F2, border: "1px solid rgba(255,255,255,0.12)", transition: "background 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
-                onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}>
+              <a href="#" style={{ background: "transparent", color: C.text, padding: "16px 32px", borderRadius: 13, fontSize: 16, fontWeight: 600, textDecoration: "none", fontFamily: F2, border: "1.5px solid rgba(0,0,0,0.12)", transition: "background 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(0,0,0,0.04)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}>
                 Read the Whitepaper
               </a>
             </div>
@@ -435,22 +433,22 @@ export default function App() {
       </section>
 
       {/* ══════ FOOTER ══════ */}
-      <footer style={{ background: DARK2, borderTop: "1px solid rgba(255,255,255,0.05)", padding: "64px 48px 32px" }}>
+      <footer style={{ background: "#F8F8FA", borderTop: "1px solid rgba(0,0,0,0.07)", padding: "64px 48px 32px" }}>
         <div style={{ maxWidth: 1140, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "2.4fr 1fr 1fr 1fr", gap: 40, marginBottom: 52 }}>
             {/* Brand */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
                 <img src={tokenImg} alt="HTGC" style={{ width: 36, height: 36, objectFit: "contain" }} />
-                <span style={{ fontSize: 18, fontWeight: 800, color: "#fff", fontFamily: F1, letterSpacing: -0.5 }}>HTGC</span>
+                <span style={{ fontSize: 18, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -0.5 }}>HTGC</span>
               </div>
-              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.3)", lineHeight: 1.75, maxWidth: 290, fontFamily: F2, margin: "0 0 24px" }}>
+              <p style={{ fontSize: 13, color: C.sub, lineHeight: 1.75, maxWidth: 290, fontFamily: F2, margin: "0 0 24px" }}>
                 Issued by Insfers. A regulated payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's treasury bills and bonds. Not legal tender.
               </p>
               {/* Chain badges */}
               <div style={{ display: "flex", gap: 8 }}>
                 {["Solana", "Stellar"].map(chain => (
-                  <div key={chain} style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.4)", fontFamily: F1, padding: "5px 12px", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, letterSpacing: 0.5 }}>{chain}</div>
+                  <div key={chain} style={{ fontSize: 11, fontWeight: 600, color: C.gray, fontFamily: F1, padding: "5px 12px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 20, letterSpacing: 0.5 }}>{chain}</div>
                 ))}
               </div>
             </div>
@@ -460,20 +458,20 @@ export default function App() {
               { t: "Legal", l: ["Terms", "Privacy", "Compliance", "Risk Disclosures", "Licenses"] },
             ].map((col, i) => (
               <div key={i}>
-                <div style={{ fontSize: 10.5, fontWeight: 700, color: "rgba(255,255,255,0.3)", marginBottom: 16, fontFamily: F1, letterSpacing: 2.5, textTransform: "uppercase" }}>{col.t}</div>
+                <div style={{ fontSize: 10.5, fontWeight: 700, color: C.gray, marginBottom: 16, fontFamily: F1, letterSpacing: 2.5, textTransform: "uppercase" }}>{col.t}</div>
                 {col.l.map(link => (
-                  <a key={link} href="#" style={{ display: "block", fontSize: 13.5, color: "rgba(255,255,255,0.4)", textDecoration: "none", marginBottom: 10, fontFamily: F2, transition: "color 0.2s" }}
-                    onMouseEnter={e => (e.target.style.color = "#fff")}
-                    onMouseLeave={e => (e.target.style.color = "rgba(255,255,255,0.4)")}>
+                  <a key={link} href="#" style={{ display: "block", fontSize: 13.5, color: C.sub, textDecoration: "none", marginBottom: 10, fontFamily: F2, transition: "color 0.2s" }}
+                    onMouseEnter={e => (e.target.style.color = C.text)}
+                    onMouseLeave={e => (e.target.style.color = C.sub)}>
                     {link}
                   </a>
                 ))}
               </div>
             ))}
           </div>
-          <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: F2 }}>&copy; 2026 Insfers. All rights reserved.</span>
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", fontFamily: F2 }}>Est. 1813 &middot; Haitian Gourde Coin</span>
+          <div style={{ borderTop: "1px solid rgba(0,0,0,0.07)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span style={{ fontSize: 12, color: C.gray, fontFamily: F2 }}>&copy; 2026 Insfers. All rights reserved.</span>
+            <span style={{ fontSize: 12, color: C.gray, fontFamily: F2 }}>Est. 1813 &middot; Haitian Gourde Coin</span>
           </div>
         </div>
       </footer>
