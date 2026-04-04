@@ -92,37 +92,27 @@ export default function App() {
       <Nav />
 
       {/* ══════ HERO ══════ */}
-      <section style={{ background: "#fff", minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", padding: "110px 48px 80px" }}>
-        {/* Coin ring image — right side, faded */}
+      <section className="hero-section" style={{ background: "#fff", minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", padding: "110px 48px 80px" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${heroBg})`, backgroundSize: "60%", backgroundPosition: "right center", backgroundRepeat: "no-repeat", opacity: 0.12 }} />
-        {/* Soft white fade so left text area stays clean */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 100%)" }} />
-
-        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 480px", gap: 72, alignItems: "center", position: "relative", zIndex: 2, width: "100%" }}>
+        <div className="hero-grid" style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 480px", gap: 72, alignItems: "center", position: "relative", zIndex: 2, width: "100%" }}>
           <div>
-            {/* Badge */}
             <Reveal>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,32,159,0.07)", border: "1px solid rgba(0,32,159,0.15)", borderRadius: 100, padding: "6px 16px 6px 8px", marginBottom: 32 }}>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: C.teal, animation: "pulse2 2s infinite" }} />
                 <span style={{ fontSize: 11.5, color: C.teal, fontWeight: 700, fontFamily: F1, letterSpacing: 1.5 }}>EST. 1813 · ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN</span>
               </div>
             </Reveal>
-
-            {/* Headline */}
             <Reveal delay={0.1}>
-              <h1 style={{ fontSize: 68, fontWeight: 800, color: C.text, lineHeight: 1.0, margin: "0 0 24px", fontFamily: F1, letterSpacing: -3 }}>
+              <h1 className="hero-h1" style={{ fontSize: 68, fontWeight: 800, color: C.text, lineHeight: 1.0, margin: "0 0 24px", fontFamily: F1, letterSpacing: -3 }}>
                 212 years<br />of history.<br /><span style={{ color: C.accent }}>Now on blockchain.</span>
               </h1>
             </Reveal>
-
-            {/* Subtext */}
             <Reveal delay={0.2}>
-              <p style={{ fontSize: 18, color: C.sub, lineHeight: 1.8, maxWidth: 500, margin: "0 0 40px", fontFamily: F2 }}>
+              <p className="hero-p" style={{ fontSize: 18, color: C.sub, lineHeight: 1.8, maxWidth: 500, margin: "0 0 40px", fontFamily: F2 }}>
                 HTGC is the Haitian gourde on blockchain — pegged 1:1, backed by Haiti's treasury bills and bonds. One of the world's oldest national currencies, finally tokenized. Issued by <strong style={{ color: C.text }}>Insfers</strong>.
               </p>
             </Reveal>
-
-            {/* CTA row */}
             <Reveal delay={0.3}>
               <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
                 <a href="#cta" style={{ background: C.accent, color: "#fff", padding: "15px 34px", borderRadius: 12, fontSize: 15, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 6px 28px rgba(209,34,41,0.28)", transition: "transform 0.2s, box-shadow 0.2s" }}
@@ -135,10 +125,8 @@ export default function App() {
                 </a>
               </div>
             </Reveal>
-
-            {/* Quick stats row */}
             <Reveal delay={0.4}>
-              <div style={{ display: "flex", gap: 36, marginTop: 52, paddingTop: 36, borderTop: "1px solid rgba(0,0,0,0.08)" }}>
+              <div className="hero-stats" style={{ display: "flex", gap: 36, marginTop: 52, paddingTop: 36, borderTop: "1px solid rgba(0,0,0,0.08)" }}>
                 {[{ n: "<2%", l: "Transfer fee" }, { n: "1:1", l: "HTG peg" }, { n: "24/7", l: "Availability" }, { n: "~5s", l: "Settlement" }].map((s, i) => (
                   <div key={i}>
                     <div style={{ fontSize: 22, fontWeight: 800, color: i % 2 === 0 ? C.accent : C.teal, fontFamily: F1 }}>{s.n}</div>
@@ -148,9 +136,7 @@ export default function App() {
               </div>
             </Reveal>
           </div>
-
-          {/* Token visual */}
-          <Reveal delay={0.35} style={{ display: "flex", justifyContent: "center" }}>
+          <Reveal delay={0.35} className="hero-coin" style={{ display: "flex", justifyContent: "center" }}>
             <AnimatedCoin />
           </Reveal>
         </div>
@@ -171,12 +157,12 @@ export default function App() {
       </div>
 
       {/* ══════ CALCULATOR ══════ */}
-      <section id="send" style={{ background: "#F8F8FA", padding: "120px 48px", position: "relative", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
-        <div style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 440px", gap: 88, alignItems: "center" }}>
+      <section id="send" className="section-pad" style={{ background: "#F8F8FA", padding: "120px 48px", position: "relative", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        <div className="calc-grid" style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 440px", gap: 88, alignItems: "center" }}>
           <div>
             <Reveal><Label>Remittances</Label></Reveal>
             <Reveal delay={0.1}>
-              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, lineHeight: 1.08, margin: "0 0 20px", fontFamily: F1, letterSpacing: -1.8 }}>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, lineHeight: 1.08, margin: "0 0 20px", fontFamily: F1, letterSpacing: -1.8 }}>
                 $164–328M in fees.<br /><span style={{ color: C.gray, fontWeight: 600 }}>Every year. From Haiti's poorest families.</span>
               </h2>
             </Reveal>
@@ -201,15 +187,15 @@ export default function App() {
       </section>
 
       {/* ══════ HOW IT WORKS ══════ */}
-      <section id="how" style={{ background: "#F8F8FA", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+      <section id="how" className="section-pad" style={{ background: "#F8F8FA", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
         <div style={{ maxWidth: 1060, margin: "0 auto" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 72 }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: C.teal, letterSpacing: 3, fontFamily: F1, marginBottom: 14 }}>MINT & BURN</div>
-              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>How HTGC works</h2>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>How HTGC works</h2>
             </div>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, position: "relative" }}>
+          <div className="four-col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, position: "relative" }}>
             {/* connector line */}
             <div style={{ position: "absolute", top: 44, left: "12.5%", right: "12.5%", height: 1, background: "linear-gradient(90deg, rgba(209,34,41,0.2), rgba(0,32,159,0.2))", zIndex: 0 }} />
             {steps.map((s, i) => (
@@ -231,13 +217,13 @@ export default function App() {
       </section>
 
       {/* ══════ RESERVES ══════ */}
-      <section id="reserves" style={{ background: "#fff", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
-        <div style={{ maxWidth: 1060, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: 80, alignItems: "flex-start" }}>
+      <section id="reserves" className="section-pad" style={{ background: "#fff", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        <div className="reserves-grid" style={{ maxWidth: 1060, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: 80, alignItems: "flex-start" }}>
           {/* Left: text + bars */}
           <div>
             <Reveal><Label>Transparency</Label></Reveal>
             <Reveal delay={0.1}>
-              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 16px" }}>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 16px" }}>
                 Backed by Haiti's treasury. Always.
               </h2>
               <p style={{ fontSize: 16, color: C.sub, fontFamily: F2, margin: "0 0 40px", lineHeight: 1.8 }}>
@@ -292,16 +278,16 @@ export default function App() {
       </section>
 
       {/* ══════ NETWORKS ══════ */}
-      <section id="networks" style={{ background: "#F8F8FA", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+      <section id="networks" className="section-pad" style={{ background: "#F8F8FA", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
         <div style={{ maxWidth: 1060, margin: "0 auto" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
               <Label color={C.teal}>Blockchain Networks</Label>
-              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Two chains. One gourde.</h2>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Two chains. One gourde.</h2>
               <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 480, margin: "0 auto" }}>Natively issued on Solana and Stellar. Same reserves. Different superpowers.</p>
             </div>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="two-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             {networks.map((n, i) => (
               <Reveal key={i} delay={i * 0.15}>
                 <div style={{ background: "#fff", borderRadius: 24, padding: "36px 36px 32px", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)", transition: "box-shadow 0.3s, transform 0.3s" }}
@@ -343,17 +329,17 @@ export default function App() {
       </section>
 
       {/* ══════ IMPACT GRID ══════ */}
-      <section style={{ background: "#F8F8FA", padding: "120px 48px", position: "relative", overflow: "hidden", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+      <section className="section-pad" style={{ background: "#F8F8FA", padding: "120px 48px", position: "relative", overflow: "hidden", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
         {/* Token watermark */}
         <img src={tokenImg} alt="" style={{ position: "absolute", right: -60, top: "50%", transform: "translateY(-50%)", width: 480, opacity: 0.05, pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 64 }}>
               <Label color={C.teal}>Impact</Label>
-              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>Built for Haiti. Available everywhere.</h2>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: 0 }}>Built for Haiti. Available everywhere.</h2>
             </div>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+          <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
             {impactStats.map((s, i) => (
               <Reveal key={i} delay={i * 0.08}>
                 <div style={{ background: "#fff", borderRadius: 18, padding: "28px 28px 24px", border: "1px solid rgba(0,0,0,0.07)", transition: "box-shadow 0.25s, transform 0.25s" }}
@@ -370,16 +356,16 @@ export default function App() {
       </section>
 
       {/* ══════ REGULATED ══════ */}
-      <section style={{ background: "#fff", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+      <section className="section-pad" style={{ background: "#fff", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
         <div style={{ maxWidth: 1060, margin: "0 auto" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
               <Label color={C.accent}>Compliance</Label>
-              <h2 style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Regulated everywhere it matters.</h2>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Regulated everywhere it matters.</h2>
               <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 500, margin: "0 auto" }}>Compliance-first. Every jurisdiction. Every transaction. No shortcuts.</p>
             </div>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div className="four-col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {regulations.map((r, i) => (
               <Reveal key={i} delay={i * 0.1}>
                 <div style={{ background: "#F8F8FA", borderRadius: 20, padding: "28px 20px", border: "1px solid rgba(0,0,0,0.06)", textAlign: "center", transition: "transform 0.25s, box-shadow 0.25s, background 0.25s" }}
@@ -397,7 +383,7 @@ export default function App() {
       </section>
 
       {/* ══════ CTA ══════ */}
-      <section id="cta" style={{ background: "#fff", padding: "140px 48px", position: "relative", overflow: "hidden", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+      <section id="cta" className="section-pad" style={{ background: "#fff", padding: "140px 48px", position: "relative", overflow: "hidden", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
         {/* Token watermarks */}
         <img src={tokenImg} alt="" style={{ position: "absolute", right: -80, top: "50%", transform: "translateY(-50%)", width: 520, opacity: 0.05, pointerEvents: "none" }} />
         <img src={tokenImg} alt="" style={{ position: "absolute", left: -100, top: "50%", transform: "translateY(-50%) scaleX(-1)", width: 400, opacity: 0.03, pointerEvents: "none" }} />
@@ -406,7 +392,7 @@ export default function App() {
             <img src={tokenImg} alt="HTGC" style={{ width: 88, height: 88, objectFit: "contain", marginBottom: 28, filter: "drop-shadow(0 8px 24px rgba(0,32,159,0.2))" }} />
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 style={{ fontSize: 52, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -2.2, margin: "0 0 20px", lineHeight: 1.05 }}>
+            <h2 className="section-h2" style={{ fontSize: 52, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -2.2, margin: "0 0 20px", lineHeight: 1.05 }}>
               One of the world's oldest<br />currencies, on the newest rails.
             </h2>
           </Reveal>
@@ -435,7 +421,7 @@ export default function App() {
       {/* ══════ FOOTER ══════ */}
       <footer style={{ background: "#F8F8FA", borderTop: "1px solid rgba(0,0,0,0.07)", padding: "64px 48px 32px" }}>
         <div style={{ maxWidth: 1140, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "2.4fr 1fr 1fr 1fr", gap: 40, marginBottom: 52 }}>
+          <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2.4fr 1fr 1fr 1fr", gap: 40, marginBottom: 52 }}>
             {/* Brand */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>

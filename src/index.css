@@ -53,3 +53,55 @@ input[type=number]::-webkit-outer-spin-button {
   0%, 100% { transform: translateY(0px) rotate(-1deg); }
   50%       { transform: translateY(-18px) rotate(1deg); }
 }
+
+/* ── Responsive ────────────────────────────────────────── */
+
+/* Nav: show hamburger, hide desktop links on mobile */
+@media (max-width: 767px) {
+  .nav-desktop { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+}
+
+/* Hero grid → single column */
+@media (max-width: 767px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .hero-coin { display: none !important; }
+  .hero-section { padding: 90px 20px 56px !important; }
+  .hero-h1 { font-size: 40px !important; letter-spacing: -1.5px !important; }
+  .hero-p  { font-size: 16px !important; }
+  .hero-stats { gap: 20px !important; flex-wrap: wrap !important; }
+}
+
+/* Two-col grids → single col */
+@media (max-width: 767px) {
+  .two-col   { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .four-col  { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  .three-col { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  .calc-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .reserves-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-grid  { grid-template-columns: 1fr !important; }
+  .hero-coin  { display: none !important; }
+  .four-col   { grid-template-columns: 1fr 1fr !important; }
+  .calc-grid  { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .reserves-grid { grid-template-columns: 1fr !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* Global section padding reduction on mobile */
+@media (max-width: 767px) {
+  .section-pad { padding: 72px 20px !important; }
+  .section-h2  { font-size: 30px !important; letter-spacing: -1px !important; }
+}
+
+/* Marquee tokens: smaller on mobile */
+@media (max-width: 767px) {
+  .ticker-item { padding-right: 28px !important; }
+}
