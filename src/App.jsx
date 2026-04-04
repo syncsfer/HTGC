@@ -92,17 +92,17 @@ export default function App() {
       <Nav />
 
       {/* ══════ HERO ══════ */}
-      <section style={{ background: "#000", minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", padding: "110px 48px 80px" }}>
-        {/* Full-bleed background image */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", opacity: 0.55 }} />
-        {/* Dark overlay for text readability */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 100%)" }} />
+      <section style={{ background: "#fff", minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", padding: "110px 48px 80px" }}>
+        {/* Coin ring image — right side, faded */}
+        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${heroBg})`, backgroundSize: "60%", backgroundPosition: "right center", backgroundRepeat: "no-repeat", opacity: 0.12 }} />
+        {/* Soft white fade so left text area stays clean */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 100%)" }} />
 
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 480px", gap: 72, alignItems: "center", position: "relative", zIndex: 2, width: "100%" }}>
           <div>
             {/* Badge */}
             <Reveal>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,32,159,0.35)", border: "1px solid rgba(0,32,159,0.5)", borderRadius: 100, padding: "6px 16px 6px 8px", marginBottom: 32 }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,32,159,0.07)", border: "1px solid rgba(0,32,159,0.15)", borderRadius: 100, padding: "6px 16px 6px 8px", marginBottom: 32 }}>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: C.teal, animation: "pulse2 2s infinite" }} />
                 <span style={{ fontSize: 11.5, color: C.teal, fontWeight: 700, fontFamily: F1, letterSpacing: 1.5 }}>EST. 1813 · ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN</span>
               </div>
@@ -110,15 +110,15 @@ export default function App() {
 
             {/* Headline */}
             <Reveal delay={0.1}>
-              <h1 style={{ fontSize: 68, fontWeight: 800, color: "#ffffff", lineHeight: 1.0, margin: "0 0 24px", fontFamily: F1, letterSpacing: -3 }}>
+              <h1 style={{ fontSize: 68, fontWeight: 800, color: C.text, lineHeight: 1.0, margin: "0 0 24px", fontFamily: F1, letterSpacing: -3 }}>
                 212 years<br />of history.<br /><span style={{ color: C.accent }}>Now on blockchain.</span>
               </h1>
             </Reveal>
 
             {/* Subtext */}
             <Reveal delay={0.2}>
-              <p style={{ fontSize: 18, color: "rgba(255,255,255,0.7)", lineHeight: 1.8, maxWidth: 500, margin: "0 0 40px", fontFamily: F2 }}>
-                HTGC is the Haitian gourde on blockchain — pegged 1:1, backed by Haiti's treasury bills and bonds. One of the world's oldest national currencies, finally tokenized. Issued by <strong style={{ color: "#fff" }}>Insfers</strong>.
+              <p style={{ fontSize: 18, color: C.sub, lineHeight: 1.8, maxWidth: 500, margin: "0 0 40px", fontFamily: F2 }}>
+                HTGC is the Haitian gourde on blockchain — pegged 1:1, backed by Haiti's treasury bills and bonds. One of the world's oldest national currencies, finally tokenized. Issued by <strong style={{ color: C.text }}>Insfers</strong>.
               </p>
             </Reveal>
 
@@ -130,7 +130,7 @@ export default function App() {
                   onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 6px 28px rgba(209,34,41,0.28)"; }}>
                   Join Waitlist
                 </a>
-                <a href="#how" style={{ color: "#fff", padding: "15px 28px", borderRadius: 12, fontSize: 15, fontWeight: 600, textDecoration: "none", fontFamily: F2, border: "1.5px solid rgba(255,255,255,0.25)", background: "rgba(255,255,255,0.08)" }}>
+                <a href="#how" style={{ color: C.text, padding: "15px 28px", borderRadius: 12, fontSize: 15, fontWeight: 600, textDecoration: "none", fontFamily: F2, border: "1.5px solid rgba(0,0,0,0.12)", background: "transparent" }}>
                   How It Works →
                 </a>
               </div>
@@ -138,11 +138,11 @@ export default function App() {
 
             {/* Quick stats row */}
             <Reveal delay={0.4}>
-              <div style={{ display: "flex", gap: 36, marginTop: 52, paddingTop: 36, borderTop: "1px solid rgba(255,255,255,0.12)" }}>
+              <div style={{ display: "flex", gap: 36, marginTop: 52, paddingTop: 36, borderTop: "1px solid rgba(0,0,0,0.08)" }}>
                 {[{ n: "<2%", l: "Transfer fee" }, { n: "1:1", l: "HTG peg" }, { n: "24/7", l: "Availability" }, { n: "~5s", l: "Settlement" }].map((s, i) => (
                   <div key={i}>
                     <div style={{ fontSize: 22, fontWeight: 800, color: i % 2 === 0 ? C.accent : C.teal, fontFamily: F1 }}>{s.n}</div>
-                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", fontFamily: F2, marginTop: 2 }}>{s.l}</div>
+                    <div style={{ fontSize: 12, color: C.gray, fontFamily: F2, marginTop: 2 }}>{s.l}</div>
                   </div>
                 ))}
               </div>
