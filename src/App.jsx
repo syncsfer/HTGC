@@ -429,7 +429,7 @@ export default function App() {
                 <span style={{ fontSize: 18, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -0.5 }}>HTGC</span>
               </div>
               <p style={{ fontSize: 13, color: C.sub, lineHeight: 1.75, maxWidth: 290, fontFamily: F2, margin: "0 0 24px" }}>
-                Issued by Insfers. A regulated payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's treasury bills and bonds. Not legal tender.
+                Issued by Insfers. A regulated payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's treasury bills and bonds.
               </p>
               {/* Chain badges */}
               <div style={{ display: "flex", gap: 8 }}>
