@@ -416,7 +416,7 @@ export default function App() {
       {/* ══════ FOOTER ══════ */}
       <footer style={{ background: "#F8F8FA", borderTop: "1px solid rgba(0,0,0,0.07)", padding: "64px 48px 32px" }}>
         <div style={{ maxWidth: 1140, margin: "0 auto" }}>
-          <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2.4fr 1fr", gap: 40, marginBottom: 52 }}>
+          <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 40, marginBottom: 52 }}>
             {/* Brand */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
@@ -434,8 +434,7 @@ export default function App() {
               </div>
             </div>
             {[
-                { t: "Legal", l: ["Terms", "Privacy", "Compliance", "Risk Disclosures", "Licenses"] },
-            ].map((col, i) => (
+                ].map((col, i) => (
               <div key={i}>
                 <div style={{ fontSize: 10.5, fontWeight: 700, color: C.gray, marginBottom: 16, fontFamily: F1, letterSpacing: 2.5, textTransform: "uppercase" }}>{col.t}</div>
                 {col.l.map(link => (
