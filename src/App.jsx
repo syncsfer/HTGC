@@ -216,66 +216,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ══════ RESERVES ══════ */}
-      <section id="reserves" className="section-pad" style={{ background: "#fff", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
-        <div className="reserves-grid" style={{ maxWidth: 1060, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: 80, alignItems: "flex-start" }}>
-          {/* Left: text + bars */}
-          <div>
-            <Reveal><Label>Transparency</Label></Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 16px" }}>
-                Backed by Haiti's treasury. Always.
-              </h2>
-              <p style={{ fontSize: 16, color: C.sub, fontFamily: F2, margin: "0 0 40px", lineHeight: 1.8 }}>
-                100% reserves in Haitian sovereign instruments. Audited quarterly. No corporate debt. No crypto collateral.
-              </p>
-            </Reveal>
-            <Reveal delay={0.2}>
-              {/* Stacked bar */}
-              <div style={{ display: "flex", height: 14, borderRadius: 7, overflow: "hidden", marginBottom: 28, gap: 2 }}>
-                {reserveBars.map((b, i) => (
-                  <div key={i} style={{ width: `${b.pct}%`, background: b.color, borderRadius: i === 0 ? "7px 0 0 7px" : i === reserveBars.length - 1 ? "0 7px 7px 0" : 0 }} />
-                ))}
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px 24px" }}>
-                {reserveBars.map((b, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                    <div style={{ width: 10, height: 10, borderRadius: 3, background: b.color, marginTop: 5, flexShrink: 0 }} />
-                    <div>
-                      <div style={{ fontSize: 20, fontWeight: 800, color: C.text, fontFamily: F1 }}>{b.pct}%</div>
-                      <div style={{ fontSize: 12.5, color: C.sub, fontFamily: F2, lineHeight: 1.4 }}>{b.label}</div>
-                      <div style={{ fontSize: 11.5, color: C.accent, fontWeight: 600, fontFamily: F1, marginTop: 1 }}>Yield: {b.yield}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(0,0,0,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: C.text, fontFamily: F1 }}>Blended Reserve Yield: ~16.2%</div>
-                  <div style={{ fontSize: 12.5, color: C.sub, fontFamily: F2, marginTop: 2 }}>Self-sustaining. Low fees for users.</div>
-                </div>
-                <a href="#" style={{ background: C.text, color: "#fff", padding: "10px 20px", borderRadius: 10, fontSize: 13, fontWeight: 700, textDecoration: "none", fontFamily: F1, whiteSpace: "nowrap" }}>View Attestation →</a>
-              </div>
-            </Reveal>
-          </div>
-          {/* Right: token + trust badges */}
-          <Reveal delay={0.3}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 24 }}>
-              <img src={tokenImg} alt="HTGC Token" style={{ width: 220, height: 220, objectFit: "contain", filter: "drop-shadow(0 12px 32px rgba(0,32,159,0.18))", animation: "tokenFloat 4s ease-in-out infinite" }} />
-              <div style={{ background: "#F8F8FA", borderRadius: 16, padding: "20px 24px", border: "1px solid rgba(0,0,0,0.07)", width: "100%", textAlign: "center" }}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: C.teal, fontFamily: F1 }}>~16.2%</div>
-                <div style={{ fontSize: 13, color: C.sub, fontFamily: F2, marginTop: 4 }}>Blended annual reserve yield</div>
-              </div>
-              {[{ icon: "✓", t: "100% Reserve Coverage" }, { icon: "✓", t: "Quarterly Audits" }, { icon: "✓", t: "BRH Oversight" }].map((b, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, width: "100%" }}>
-                  <div style={{ width: 24, height: 24, borderRadius: "50%", background: "rgba(0,32,159,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: C.teal, fontWeight: 700, flexShrink: 0 }}>{b.icon}</div>
-                  <span style={{ fontSize: 13.5, color: C.text, fontFamily: F2, fontWeight: 500 }}>{b.t}</span>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* ══════ NETWORKS ══════ */}
       <section id="networks" className="section-pad" style={{ background: "#F8F8FA", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
