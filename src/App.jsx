@@ -408,11 +408,6 @@ export default function App() {
                 onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(209,34,41,0.25)"; }}>
                 Join Waitlist
               </a>
-              <a href="#" style={{ background: "transparent", color: C.text, padding: "16px 32px", borderRadius: 13, fontSize: 16, fontWeight: 600, textDecoration: "none", fontFamily: F2, border: "1.5px solid rgba(0,0,0,0.12)", transition: "background 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.background = "rgba(0,0,0,0.04)")}
-                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}>
-                Read the Whitepaper
-              </a>
             </div>
           </Reveal>
         </div>
