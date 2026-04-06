@@ -166,35 +166,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* ══════ CALCULATOR ══════ */}
-      <section id="send" className="section-pad" style={{ background: "#F8F8FA", padding: "120px 48px", position: "relative", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
-        <div className="calc-grid" style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 440px", gap: 88, alignItems: "center" }}>
-          <div>
-            <Reveal><Label>Remittances</Label></Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, lineHeight: 1.08, margin: "0 0 20px", fontFamily: F1, letterSpacing: -1.8 }}>
-                $164–328M in fees.<br /><span style={{ color: C.gray, fontWeight: 600 }}>Every year. From Haiti's poorest families.</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p style={{ fontSize: 17, color: C.sub, lineHeight: 1.85, margin: "0 0 36px", fontFamily: F2 }}>
-                Haiti received $4.1 billion in remittances in 2024. Traditional services charge 4–8% in fees. HTGC cuts that to under 2%. Try the calculator.
-              </p>
-            </Reveal>
-            {/* Token + network badges */}
-            <Reveal delay={0.3}>
-              <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "20px 24px", background: "#fff", borderRadius: 16, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)", width: "fit-content" }}>
-                <img src={tokenImg} alt="HTGC" style={{ width: 44, height: 44, objectFit: "contain" }} />
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: C.text, fontFamily: F1 }}>1 HTGC = 1 HTG</div>
-                  <div style={{ fontSize: 12, color: C.gray, fontFamily: F2, marginTop: 2 }}>Always redeemable · Solana & Stellar</div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-          <Reveal delay={0.25}><Calculator /></Reveal>
-        </div>
-      </section>
 
       {/* ══════ HOW IT WORKS ══════ */}
       <section id="how" className="section-pad" style={{ background: "#F8F8FA", padding: "120px 48px", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
