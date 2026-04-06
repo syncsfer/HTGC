@@ -51,6 +51,16 @@ const networks = [
     desc: "Purpose-built for remittances. SEP-24/31 standards for regulated cross-border corridors.",
     features: ["SEP-24/31 remittance rails", "Native SDEX trading", "USDC bridge via Stellar"],
   },
+  {
+    name: "Base",
+    sub: "ERC-20 · Ethereum L2",
+    speed: "~2s",
+    cost: "$0.001",
+    color: "#0052FF",
+    grad: "linear-gradient(135deg, #0040CC, #0052FF)",
+    desc: "Coinbase's Ethereum L2 — bringing HTGC to the broadest DeFi ecosystem with low fees and deep liquidity.",
+    features: ["Uniswap & Aerodrome liquidity", "Coinbase wallet native support", "ERC-20 composability"],
+  },
 ];
 
 const impactStats = [
@@ -224,10 +234,10 @@ export default function App() {
             <div style={{ textAlign: "center", marginBottom: 60 }}>
               <Label color={C.teal}>Blockchain Networks</Label>
               <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Two chains. One gourde.</h2>
-              <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 480, margin: "0 auto" }}>Natively issued on Solana and Stellar. Same reserves. Different superpowers.</p>
+              <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 480, margin: "0 auto" }}>Natively issued on Solana, Stellar, and Base. Same reserves. Different superpowers.</p>
             </div>
           </Reveal>
-          <div className="two-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {networks.map((n, i) => (
               <Reveal key={i} delay={i * 0.15}>
                 <div style={{ background: "#fff", borderRadius: 24, padding: "36px 36px 32px", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)", transition: "box-shadow 0.3s, transform 0.3s" }}
@@ -368,7 +378,7 @@ export default function App() {
               </p>
               {/* Chain badges */}
               <div style={{ display: "flex", gap: 8 }}>
-                {["Solana", "Stellar"].map(chain => (
+                {["Solana", "Stellar", "Base"].map(chain => (
                   <div key={chain} style={{ fontSize: 11, fontWeight: 600, color: C.gray, fontFamily: F1, padding: "5px 12px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 20, letterSpacing: 0.5 }}>{chain}</div>
                 ))}
               </div>
