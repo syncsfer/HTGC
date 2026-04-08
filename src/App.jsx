@@ -18,7 +18,7 @@ const Label = ({ children, color = C.accent }) => (
 
 const steps = [
   { n: "01", t: "Deposit", d: "Send gourde to the partner bank or convert USD through the Insfers app.", icon: "↓" },
-  { n: "02", t: "Mint", d: "Insfers mints HTGC 1:1 on Solana or Stellar. Gourde goes into bons BRH.", icon: "◆" },
+  { n: "02", t: "Mint", d: "Insfers mints HTGC 1:1 on Solana, Stellar, or Base. Gourde goes into sovereign reserves.", icon: "◆" },
   { n: "03", t: "Transfer", d: "Send HTGC anywhere in the world instantly. Fractions of a cent per transaction.", icon: "→" },
   { n: "04", t: "Redeem", d: "Burn HTGC, get gourde back. Bank, MonCash, Natcash, or cash. Always 1:1.", icon: "↑" },
 ];
@@ -85,7 +85,7 @@ const tickerItems = [
   { l: "100% TREASURY BACKED", c: C.accent },
   { l: "17% RESERVE YIELD", c: C.accent },
   { l: "$4.1B REMITTANCE MARKET", c: C.teal },
-  { l: "SOLANA & STELLAR", c: C.accent },
+  { l: "SOLANA · STELLAR · BASE", c: C.accent },
   { l: "GENIUS ACT COMPLIANT", c: C.teal },
   { l: "MiCA AUTHORIZED", c: C.accent },
 ];
@@ -119,7 +119,7 @@ export default function App() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="hero-p" style={{ fontSize: 18, color: C.sub, lineHeight: 1.8, maxWidth: 500, margin: "0 0 40px", fontFamily: F2 }}>
-                HTGC is the Haitian gourde on blockchain — pegged 1:1, backed by Haiti's treasury bills and bonds. One of the world's oldest national currencies, finally tokenized. Issued by <strong style={{ color: C.text }}>Insfers</strong>.
+                HTGC is the Haitian gourde on blockchain — pegged 1:1, backed by Haiti's treasury bills and bonds. One of the world's oldest national currencies, finally tokenized on Solana, Stellar, and Base. Issued by <strong style={{ color: C.text }}>Insfers</strong>.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -203,7 +203,7 @@ export default function App() {
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
               <Label color={C.teal}>Blockchain Networks</Label>
-              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Two chains. One gourde.</h2>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Three chains. One gourde.</h2>
               <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 480, margin: "0 auto" }}>Natively issued on Solana, Stellar, and Base. Same reserves. Different superpowers.</p>
             </div>
           </Reveal>
