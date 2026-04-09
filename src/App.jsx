@@ -86,8 +86,9 @@ const tickerItems = [
   { l: "17% RESERVE YIELD", c: C.accent },
   { l: "$4.1B REMITTANCE MARKET", c: C.teal },
   { l: "SOLANA · STELLAR · BASE", c: C.accent },
-  { l: "GENIUS ACT COMPLIANT", c: C.teal },
-  { l: "MiCA AUTHORIZED", c: C.accent },
+  { l: "SEND", c: C.accent },
+  { l: "SPEND", c: C.teal },
+  { l: "TRADE", c: C.accent },
 ];
 
 export default function App() {
