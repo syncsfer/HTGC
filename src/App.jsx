@@ -82,6 +82,7 @@ const regulations = [
 const tickerItems = [
   { l: "EST. 1813 — ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN", c: C.accent },
   { l: "1:1 GOURDE PEG", c: C.teal },
+  { l: "LAUNCHING THIS YEAR", c: C.accent },
   { l: "100% TREASURY BACKED", c: C.accent },
   { l: "17% RESERVE YIELD", c: C.accent },
   { l: "$4.1B REMITTANCE MARKET", c: C.teal },
@@ -108,9 +109,15 @@ export default function App() {
         <div className="hero-grid" style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 480px", gap: 72, alignItems: "center", position: "relative", zIndex: 2, width: "100%" }}>
           <div>
             <Reveal>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,32,159,0.07)", border: "1px solid rgba(0,32,159,0.15)", borderRadius: 100, padding: "6px 16px 6px 8px", marginBottom: 32 }}>
-                <div style={{ width: 8, height: 8, borderRadius: "50%", background: C.teal, animation: "pulse2 2s infinite" }} />
-                <span style={{ fontSize: 11.5, color: C.teal, fontWeight: 700, fontFamily: F1, letterSpacing: 1.5 }}>EST. 1813 · ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN</span>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 32 }}>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,32,159,0.07)", border: "1px solid rgba(0,32,159,0.15)", borderRadius: 100, padding: "6px 16px 6px 8px" }}>
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: C.teal, animation: "pulse2 2s infinite" }} />
+                  <span style={{ fontSize: 11.5, color: C.teal, fontWeight: 700, fontFamily: F1, letterSpacing: 1.5 }}>EST. 1813 · ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN</span>
+                </div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(209,34,41,0.07)", border: "1px solid rgba(209,34,41,0.2)", borderRadius: 100, padding: "6px 16px 6px 8px" }}>
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: C.accent, animation: "pulse2 2s infinite 0.5s" }} />
+                  <span style={{ fontSize: 11.5, color: C.accent, fontWeight: 700, fontFamily: F1, letterSpacing: 1.5 }}>LAUNCHING THIS YEAR</span>
+                </div>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
