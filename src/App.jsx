@@ -82,7 +82,7 @@ const regulations = [
 const tickerItems = [
   { l: "EST. 1813 — ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN", c: C.accent },
   { l: "1:1 GOURDE PEG", c: C.teal },
-  { l: "LAUNCHING THIS YEAR", c: C.accent },
+  { l: "LAUNCHING SOON", c: C.accent },
   { l: "100% TREASURY BACKED", c: C.accent },
   { l: "17% RESERVE YIELD", c: C.accent },
   { l: "$4.1B REMITTANCE MARKET", c: C.teal },
@@ -116,7 +116,7 @@ export default function App() {
                 </div>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(209,34,41,0.07)", border: "1px solid rgba(209,34,41,0.2)", borderRadius: 100, padding: "6px 16px 6px 8px" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: C.accent, animation: "pulse2 2s infinite 0.5s" }} />
-                  <span style={{ fontSize: 11.5, color: C.accent, fontWeight: 700, fontFamily: F1, letterSpacing: 1.5 }}>LAUNCHING THIS YEAR</span>
+                  <span style={{ fontSize: 11.5, color: C.accent, fontWeight: 700, fontFamily: F1, letterSpacing: 1.5 }}>LAUNCHING SOON</span>
                 </div>
               </div>
             </Reveal>
