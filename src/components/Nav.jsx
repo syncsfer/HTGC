@@ -32,7 +32,7 @@ export default function Nav() {
           </a>
 
           {/* Desktop links */}
-          <div style={{ display: "flex", gap: 28, alignItems: "center", "@media(maxWidth:768px)": { display: "none" } }} className="nav-desktop">
+          <div style={{ display: "flex", gap: 36, alignItems: "center" }} className="nav-desktop">
             {links.map(item => (
               <a key={item} href={`#${item.toLowerCase()}`}
                 style={{ color: "rgba(0,0,0,0.45)", textDecoration: "none", fontSize: 13.5, fontWeight: 500, fontFamily: F2, transition: "color 0.2s" }}
