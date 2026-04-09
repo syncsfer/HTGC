@@ -12,7 +12,7 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  const links = ["Send", "Reserves", "Networks", "Developers"];
+  const links = ["Networks", "Developers"];
 
   return (
     <>
