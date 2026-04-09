@@ -369,7 +369,16 @@ export default function App() {
           </div>
           <div style={{ borderTop: "1px solid rgba(0,0,0,0.07)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <span style={{ fontSize: 12, color: C.gray, fontFamily: F2 }}>&copy; 2026 Insfers. All rights reserved.</span>
-            <span style={{ fontSize: 12, color: C.gray, fontFamily: F2 }}>Est. 1813 &middot; Haitian Gourde Coin</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              <span style={{ fontSize: 12, color: C.gray, fontFamily: F2 }}>Est. 1813 &middot; Haitian Gourde Coin</span>
+              <a href="https://x.com/HTGCOIN" target="_blank" rel="noopener noreferrer"
+                style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: C.gray, textDecoration: "none", fontFamily: F2, transition: "color 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.color = C.text)}
+                onMouseLeave={e => (e.currentTarget.style.color = C.gray)}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                @HTGCOIN
+              </a>
+            </div>
           </div>
         </div>
       </footer>
