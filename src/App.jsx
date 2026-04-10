@@ -83,7 +83,7 @@ const tickerItems = [
   { l: "EST. 1813 — ONE OF THE WORLD'S OLDEST CURRENCIES ON CHAIN", c: C.accent },
   { l: "1:1 GOURDE PEG", c: C.teal },
   { l: "LAUNCHING SOON", c: C.accent },
-  { l: "100% TREASURY BACKED", c: C.accent },
+  { l: "FULLY BACKED BY REAL CASH AND CASH EQUIVALENTS", c: C.teal },
   { l: "$4.1B REMITTANCE MARKET", c: C.teal },
   { l: "SOLANA · STELLAR · BASE", c: C.accent },
   { l: "SEND", c: C.accent },
