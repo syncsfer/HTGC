@@ -84,7 +84,6 @@ const tickerItems = [
   { l: "1:1 GOURDE PEG", c: C.teal },
   { l: "LAUNCHING SOON", c: C.accent },
   { l: "100% TREASURY BACKED", c: C.accent },
-  { l: "17% RESERVE YIELD", c: C.accent },
   { l: "$4.1B REMITTANCE MARKET", c: C.teal },
   { l: "SOLANA · STELLAR · BASE", c: C.accent },
   { l: "SEND", c: C.accent },
