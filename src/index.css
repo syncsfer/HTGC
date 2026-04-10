@@ -68,7 +68,7 @@ input[type=number]::-webkit-outer-spin-button {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
-  .hero-coin { display: none !important; }
+  .hero-coin { display: flex !important; justify-content: center !important; transform: scale(0.65) !important; margin-top: -20px !important; }
   .hero-section { padding: 90px 20px 56px !important; }
   .hero-h1 { font-size: 40px !important; letter-spacing: -1.5px !important; }
   .hero-p  { font-size: 16px !important; }
