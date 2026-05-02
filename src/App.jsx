@@ -5,6 +5,9 @@ import AnimatedCoin from "./components/AnimatedCoin";
 import Calculator from "./components/Calculator";
 import tokenImg from "./assets/htgc-token.png";
 import heroBg from "./assets/hero-bg.png";
+import solLogo from "./assets/sol-logo.jpeg";
+import stellarLogo from "./assets/stellar-logo.png";
+import baseLogo from "./assets/base-logo.png";
 
 // ── shared section helpers ──────────────────────────────
 const DARK = "#0A0A10";
@@ -38,6 +41,7 @@ const networks = [
     cost: "$0.00025",
     color: "#D12229",
     grad: "linear-gradient(135deg, #D12229, #E63946)",
+    logo: solLogo,
     desc: "High throughput for DeFi, DEX trading, and developer integrations. Compliance-ready with freeze authority and transfer hooks.",
     features: ["Jupiter & Raydium DEX listing", "Token-2022 compliance hooks", "Fee sponsorship via relayer"],
   },
@@ -48,6 +52,7 @@ const networks = [
     cost: "$0.00001",
     color: "#00209F",
     grad: "linear-gradient(135deg, #001166, #00209F)",
+    logo: stellarLogo,
     desc: "Purpose-built for remittances. SEP-24/31 standards for regulated cross-border corridors.",
     features: ["SEP-24/31 remittance rails", "Native SDEX trading", "USDC bridge via Stellar"],
   },
@@ -58,6 +63,7 @@ const networks = [
     cost: "$0.001",
     color: "#0052FF",
     grad: "linear-gradient(135deg, #0040CC, #0052FF)",
+    logo: baseLogo,
     desc: "Coinbase's Ethereum L2 — bringing HTGC to the broadest DeFi ecosystem with low fees and deep liquidity.",
     features: ["Uniswap & Aerodrome liquidity", "Coinbase wallet native support", "ERC-20 composability"],
   },
@@ -222,8 +228,8 @@ export default function App() {
                   onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.04)"; e.currentTarget.style.transform = "none"; }}>
                   {/* Header */}
                   <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
-                    <div style={{ width: 48, height: 48, borderRadius: 14, background: n.grad, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 800, color: "#fff", fontFamily: F1, boxShadow: `0 4px 14px ${n.color}44` }}>
-                      {n.name[0]}
+                    <div style={{ width: 48, height: 48, borderRadius: 14, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 4px 14px ${n.color}22`, border: "1px solid rgba(0,0,0,0.07)", flexShrink: 0 }}>
+                      <img src={n.logo} alt={n.name} style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 6 }} />
                     </div>
                     <div>
                       <div style={{ fontSize: 20, fontWeight: 700, color: C.text, fontFamily: F1 }}>{n.name}</div>
