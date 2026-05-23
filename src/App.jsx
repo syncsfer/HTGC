@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { C, F1, F2 } from "./constants/colors";
 import Nav from "./components/Nav";
 import Reveal from "./components/Reveal";
@@ -396,6 +397,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
