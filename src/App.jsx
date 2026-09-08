@@ -69,14 +69,14 @@ const networks = [
   },
   {
     name: "Arc",
-    sub: "Arc Network · ZK-powered",
+    sub: "Stablecoin-native L1",
     speed: "<1s",
-    cost: "$0.0001",
+    cost: "USDC-native gas",
     color: "#8B5CF6",
     grad: "linear-gradient(135deg, #7C3AED, #8B5CF6)",
     logo: null,
-    desc: "Zero-knowledge powered network enabling private, scalable HTGC transfers with cross-chain liquidity.",
-    features: ["ZK-proof privacy", "Cross-chain bridge", "Sub-second finality"],
+    desc: "Purpose-built for payments. A stablecoin-native Layer 1 with sub-second finality and USDC-native gas fees.",
+    features: ["Sub-second finality", "USDC-native gas fees", "Purpose-built for payments"],
   },
 ];
 
