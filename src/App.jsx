@@ -21,7 +21,7 @@ const Label = ({ children, color = C.accent }) => (
 
 const steps = [
   { n: "01", t: "Deposit", d: "Send gourde to the partner bank or convert USD through the Insfers app.", icon: "↓" },
-  { n: "02", t: "Mint", d: "Insfers mints HTGC 1:1 on Solana, Stellar, or Base. Gourde goes into sovereign reserves.", icon: "◆" },
+  { n: "02", t: "Mint", d: "Insfers mints HTGC 1:1 on Solana, Stellar, Base, or Arc. Gourde goes into sovereign reserves.", icon: "◆" },
   { n: "03", t: "Transfer", d: "Send HTGC anywhere in the world instantly. Fractions of a cent per transaction.", icon: "→" },
   { n: "04", t: "Redeem", d: "Burn HTGC, get gourde back. Bank, MonCash, Natcash, or cash. Always 1:1.", icon: "↑" },
 ];
@@ -67,6 +67,17 @@ const networks = [
     desc: "Coinbase's Ethereum L2 — bringing HTGC to the broadest DeFi ecosystem with low fees and deep liquidity.",
     features: ["Uniswap & Aerodrome liquidity", "Coinbase wallet native support", "ERC-20 composability"],
   },
+  {
+    name: "Arc",
+    sub: "Arc Network · ZK-powered",
+    speed: "<1s",
+    cost: "$0.0001",
+    color: "#8B5CF6",
+    grad: "linear-gradient(135deg, #7C3AED, #8B5CF6)",
+    logo: null,
+    desc: "Zero-knowledge powered network enabling private, scalable HTGC transfers with cross-chain liquidity.",
+    features: ["ZK-proof privacy", "Cross-chain bridge", "Sub-second finality"],
+  },
 ];
 
 const impactStats = [
@@ -91,7 +102,7 @@ const tickerItems = [
   { l: "LAUNCHING SOON", c: C.accent },
   { l: "FULLY BACKED BY REAL CASH AND CASH EQUIVALENTS", c: C.teal },
   { l: "$4.1B REMITTANCE MARKET", c: C.teal },
-  { l: "SOLANA · STELLAR · BASE", c: C.accent },
+  { l: "SOLANA · STELLAR · BASE · ARC", c: C.accent },
   { l: "SEND", c: C.accent },
   { l: "SPEND", c: C.teal },
   { l: "TRADE", c: C.accent },
@@ -132,7 +143,7 @@ export default function App() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="hero-p" style={{ fontSize: 18, color: C.sub, lineHeight: 1.8, maxWidth: 500, margin: "0 0 40px", fontFamily: F2 }}>
-                HTGC is the Haitian gourde on blockchain — pegged 1:1, backed by Haiti's treasury bills and bonds. One of the world's oldest national currencies, finally tokenized on Solana, Stellar, and Base. Issued by <strong style={{ color: C.text }}>Insfers</strong>.
+                HTGC is the Haitian gourde on blockchain — pegged 1:1, backed by Haiti's treasury bills and bonds. One of the world's oldest national currencies, finally tokenized on Solana, Stellar, Base, and Arc. Issued by <strong style={{ color: C.text }}>Insfers</strong>.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -216,11 +227,11 @@ export default function App() {
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
               <Label color={C.teal}>Blockchain Networks</Label>
-              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Three chains. One gourde.</h2>
-              <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 480, margin: "0 auto" }}>Natively issued on Solana, Stellar, and Base. Same reserves. Different superpowers.</p>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Four chains. One gourde.</h2>
+              <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 480, margin: "0 auto" }}>Natively issued on Solana, Stellar, Base, and Arc. Same reserves. Different superpowers.</p>
             </div>
           </Reveal>
-          <div className="three-col" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div className="four-col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
             {networks.map((n, i) => (
               <Reveal key={i} delay={i * 0.15}>
                 <div style={{ background: "#fff", borderRadius: 24, padding: "36px 36px 32px", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)", transition: "box-shadow 0.3s, transform 0.3s" }}
@@ -229,7 +240,10 @@ export default function App() {
                   {/* Header */}
                   <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
                     <div style={{ width: 48, height: 48, borderRadius: 14, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 4px 14px ${n.color}22`, border: "1px solid rgba(0,0,0,0.07)", flexShrink: 0 }}>
-                      <img src={n.logo} alt={n.name} style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 6 }} />
+                      {n.logo
+                        ? <img src={n.logo} alt={n.name} style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 6 }} />
+                        : <span style={{ fontSize: 20, fontWeight: 800, color: n.color, fontFamily: F1 }}>{n.name[0]}</span>
+                      }
                     </div>
                     <div>
                       <div style={{ fontSize: 20, fontWeight: 700, color: C.text, fontFamily: F1 }}>{n.name}</div>
@@ -362,7 +376,7 @@ export default function App() {
               </p>
               {/* Chain badges */}
               <div style={{ display: "flex", gap: 8 }}>
-                {["Solana", "Stellar", "Base"].map(chain => (
+                {["Solana", "Stellar", "Base", "Arc"].map(chain => (
                   <div key={chain} style={{ fontSize: 11, fontWeight: 600, color: C.gray, fontFamily: F1, padding: "5px 12px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 20, letterSpacing: 0.5 }}>{chain}</div>
                 ))}
               </div>
