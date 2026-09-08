@@ -8,6 +8,7 @@ import heroBg from "./assets/hero-bg.png";
 import solLogo from "./assets/sol-logo.jpeg";
 import stellarLogo from "./assets/stellar-logo.png";
 import baseLogo from "./assets/base-logo.png";
+import arcLogo from "./assets/arc-logo.jpeg";
 
 // ── shared section helpers ──────────────────────────────
 const DARK = "#0A0A10";
@@ -74,7 +75,7 @@ const networks = [
     cost: "USDC-native gas",
     color: "#8B5CF6",
     grad: "linear-gradient(135deg, #7C3AED, #8B5CF6)",
-    logo: null,
+    logo: arcLogo,
     desc: "Purpose-built for payments. A stablecoin-native Layer 1 with sub-second finality and USDC-native gas fees.",
     features: ["Sub-second finality", "USDC-native gas fees", "Purpose-built for payments"],
   },
