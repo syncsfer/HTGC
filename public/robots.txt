@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://htgc.io/sitemap.xml
+Sitemap: https://htgc.ht/sitemap.xml
