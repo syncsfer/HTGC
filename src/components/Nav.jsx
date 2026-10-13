@@ -41,7 +41,7 @@ export default function Nav() {
                 {item}
               </a>
             ))}
-            <a href="#cta" style={{ background: C.accent, color: "#fff", padding: "9px 20px", borderRadius: 10, fontSize: 13.5, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 4px 14px rgba(209,34,41,0.25)" }}>
+            <a href="https://faucet.insfers.com" target="_blank" rel="noopener noreferrer" style={{ background: C.accent, color: "#fff", padding: "9px 20px", borderRadius: 10, fontSize: 13.5, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 4px 14px rgba(209,34,41,0.25)" }}>
               Get HTGC
             </a>
           </div>
@@ -64,7 +64,7 @@ export default function Nav() {
                 {item}
               </a>
             ))}
-            <a href="#cta" onClick={() => setMenuOpen(false)}
+            <a href="https://faucet.insfers.com" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}
               style={{ display: "block", marginTop: 14, background: C.accent, color: "#fff", padding: "13px 0", borderRadius: 12, fontSize: 15, fontWeight: 700, textDecoration: "none", fontFamily: F1, textAlign: "center" }}>
               Get HTGC
             </a>
