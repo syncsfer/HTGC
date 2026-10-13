@@ -54,7 +54,7 @@ const networks = [
     color: "#00209F",
     grad: "linear-gradient(135deg, #001166, #00209F)",
     logo: stellarLogo,
-    desc: "Purpose-built for remittances. SEP-24/31 standards for regulated cross-border corridors.",
+    desc: "Purpose-built for remittances. SEP-24/31 standards for cross-border corridors. Coming soon.",
     features: ["SEP-24/31 remittance rails", "Native SDEX trading", "USDC bridge via Stellar"],
   },
   {
@@ -310,7 +310,7 @@ export default function App() {
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
               <Label color={C.accent}>Compliance</Label>
-              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Regulated everywhere it matters.</h2>
+              <h2 className="section-h2" style={{ fontSize: 46, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -1.8, margin: "0 0 14px" }}>Coming soon everywhere it matters.</h2>
               <p style={{ fontSize: 17, color: C.sub, fontFamily: F2, maxWidth: 500, margin: "0 auto" }}>Compliance-first. Every jurisdiction. Every transaction. No shortcuts.</p>
             </div>
           </Reveal>
@@ -373,7 +373,7 @@ export default function App() {
                 <span style={{ fontSize: 18, fontWeight: 800, color: C.text, fontFamily: F1, letterSpacing: -0.5 }}>HTGC</span>
               </div>
               <p style={{ fontSize: 13, color: C.sub, lineHeight: 1.75, maxWidth: 290, fontFamily: F2, margin: "0 0 24px" }}>
-                Issued by Insfers. A regulated payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's treasury bills and bonds.
+                Issued by Insfers. A payment stablecoin pegged 1:1 to the Haitian gourde, backed by Haiti's treasury bills and bonds. Coming soon.
               </p>
               {/* Chain badges */}
               <div style={{ display: "flex", gap: 8 }}>
