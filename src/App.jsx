@@ -149,11 +149,6 @@ export default function App() {
             </Reveal>
             <Reveal delay={0.3}>
               <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-                <a href="#cta" style={{ background: C.accent, color: "#fff", padding: "15px 34px", borderRadius: 12, fontSize: 15, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 6px 28px rgba(209,34,41,0.28)", transition: "transform 0.2s, box-shadow 0.2s" }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 10px 36px rgba(209,34,41,0.38)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 6px 28px rgba(209,34,41,0.28)"; }}>
-                  Join Waitlist
-                </a>
                 <a href="#how" style={{ color: C.text, padding: "15px 28px", borderRadius: 12, fontSize: 15, fontWeight: 600, textDecoration: "none", fontFamily: F2, border: "1.5px solid rgba(0,0,0,0.12)", background: "transparent" }}>
                   How It Works →
                 </a>
@@ -352,11 +347,6 @@ export default function App() {
           </Reveal>
           <Reveal delay={0.2}>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="https://insfers.com" style={{ background: C.accent, color: "#fff", padding: "16px 38px", borderRadius: 13, fontSize: 16, fontWeight: 700, textDecoration: "none", fontFamily: F1, boxShadow: "0 8px 32px rgba(209,34,41,0.25)", transition: "transform 0.2s, box-shadow 0.2s" }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 44px rgba(209,34,41,0.38)"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(209,34,41,0.25)"; }}>
-                Join Waitlist
-              </a>
             </div>
           </Reveal>
         </div>
